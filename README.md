@@ -2,11 +2,11 @@
 
 **Description :** Реализовать классическую Kanban доску с основным функционалом таких приложений.
 
-**Stack :** TypeScript, Next.js, React, MongoDB, Redux, React Query.
+**Stack :** TypeScript, Next.js, MongoDB, Redux, React Query.
 
-**Additional Stack :** Material UI, React DND, Framer Motion, React Hook Form, React Hot Toast.
+**Additional Stack :** Material UI, React DND, Framer Motion, React Hook Form.
 
-**Target :** Научится работать с TypeScript, Next.js, MongoDB и другими различными библиотеками.
+**Target :** Научится работать с TypeScript, Next.js, MongoDB.
 
 # Stage
 
