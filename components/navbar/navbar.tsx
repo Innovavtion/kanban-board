@@ -1,5 +1,6 @@
 import Link from "next/link";
 import style from "./navbar.module.css";
+import AvatarUsers from "../avatar/avatar";
 
 export default function Navbar() {
   return (
@@ -17,6 +18,7 @@ export default function Navbar() {
           Blog
         </Link>
       </div>
+      <AvatarUsers />
     </div>
   );
 }
