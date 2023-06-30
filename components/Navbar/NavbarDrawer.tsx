@@ -24,6 +24,7 @@ import MailIcon from "@mui/icons-material/Mail";
 
 // Styles Mui
 import { styled } from "@mui/material/styles";
+import { Typography } from "@mui/material";
 
 // Drawer Styles Mui
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -35,7 +36,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-const drawerWidth = 200;
+const drawerWidth = 75;
 
 type Props = {
   mode: boolean;
@@ -60,18 +61,25 @@ export default function NavbarDrawer({
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
+          display: "flex",
         },
       }}
       variant="persistent"
       anchor="left"
       open={open}
     >
-      <DrawerHeader>
-        <IconButton onClick={() => drawerOpen(open)}>
+      <DrawerHeader
+        sx={{
+          "@media (min-width: 600px)": {
+            minHeight: "49px",
+          },
+        }}
+      >
+        <IconButton onClick={() => drawerOpen(open)} color="inherit">
           {theme.direction === "ltr" ? (
-            <ChevronLeftIcon />
+            <ChevronLeftIcon sx={{ p: 0 }} />
           ) : (
-            <ChevronRightIcon />
+            <ChevronRightIcon sx={{ p: 0 }} />
           )}
         </IconButton>
       </DrawerHeader>
@@ -79,23 +87,86 @@ export default function NavbarDrawer({
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
+            <ListItemButton sx={{ justifyContent: "center" }}>
+              <ListItemIcon
+                sx={{
+                  justifyContent: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  color: "inherit",
+                }}
+              >
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: 10,
+                    width: drawerWidth - 5,
+                    wordWrap: "break-word",
+                  }}
+                >
+                  {text}
+                </Typography>
               </ListItemIcon>
-              <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider />
-      <Button onClick={() => setMode(!mode)} color="inherit">
-        {theme.palette.mode === "dark" ? (
-          <Brightness7Icon />
-        ) : (
-          <Brightness4Icon />
-        )}
-      </Button>
+      <List
+        sx={{
+          display: "flex",
+          alignItems: "flex-end",
+          height: "100%",
+        }}
+      >
+        <ListItem disablePadding>
+          <ListItemButton
+            sx={{
+              justifyContent: "center",
+            }}
+            onClick={() => setMode(!mode)}
+            color="inherit"
+          >
+            <ListItemIcon
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                color: "inherit",
+              }}
+            >
+              {theme.palette.mode === "dark" ? (
+                <>
+                  <Brightness7Icon />
+                  <Typography
+                    sx={{
+                      textAlign: "center",
+                      fontSize: 10,
+                    }}
+                  >
+                    Theme dark
+                  </Typography>
+                </>
+              ) : (
+                <>
+                  <Brightness4Icon />
+                  <Typography
+                    sx={{
+                      textAlign: "center",
+                      fontSize: 10,
+                    }}
+                  >
+                    Theme white
+                  </Typography>
+                </>
+              )}
+            </ListItemIcon>
+          </ListItemButton>
+        </ListItem>
+      </List>
     </Drawer>
   );
 }
