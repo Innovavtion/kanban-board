@@ -7,6 +7,7 @@ import NavbarInput from "./NavbarInput";
 import NavbarDrawer from "./NavbarDrawer";
 import NavbarLogo from "./NavbarLogo";
 import NavbarMenu from "./NavbarMenu";
+import NavbarListLinkItem from "./NavbarListLinkItem";
 
 // Components Mui
 import {
@@ -61,7 +62,12 @@ export default function Navbar({ mode, setMode }: Props) {
               <MenuIcon />
             </Button>
             <NavbarLogo />
-            <NavbarListLink />
+            <NavbarListLink text="Рабочие пространства" assignment="work" />
+            <NavbarListLink text="Недавние" assignment="recent">
+              <NavbarListLinkItem />
+              <NavbarListLinkItem />
+            </NavbarListLink>
+            <NavbarListLink text="В избранном" assignment="favorite" />
           </Typography>
           <NavbarInput />
           <IconButton color="inherit" onClick={handleClick}>

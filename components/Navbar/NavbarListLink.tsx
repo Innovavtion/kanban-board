@@ -3,8 +3,15 @@ import NavbarListLinkItem from "./NavbarListLinkItem";
 
 import { Typography, Button, Menu, List } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import NavbarContainerSubmenu from "./NavbarContainerSubmenu";
 
-export default function NavbarListLink() {
+type Props = {
+  children?: string | JSX.Element | JSX.Element[];
+  assignment: "work" | "recent" | "favorite";
+  text: string;
+};
+
+export default function NavbarListLink({ children, assignment, text }: Props) {
   // Open Menu
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -28,10 +35,10 @@ export default function NavbarListLink() {
           sx={{
             fontWeight: 300,
             fontSize: 14,
-            textTransform: "capitalize",
+            textTransform: "none",
           }}
         >
-          Недавние
+          {text}
         </Typography>
         <ExpandMoreIcon sx={{}} />
       </Button>
@@ -48,11 +55,17 @@ export default function NavbarListLink() {
         <List
           sx={{
             width: "100%",
-            maxWidth: 360,
+            minWidth: 305,
+            maxWidth: 305,
             cursor: "pointer",
+            py: 0.1,
           }}
         >
-          <NavbarListLinkItem />
+          {children?.toString.length != null ? (
+            children
+          ) : (
+            <NavbarContainerSubmenu assignment={assignment} />
+          )}
         </List>
       </Menu>
     </>

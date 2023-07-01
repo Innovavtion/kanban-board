@@ -15,6 +15,28 @@ const ListItemCustom = styled(ListItem)(({ theme }) => ({
     cursor: "pointer",
     backgroundColor: alpha(theme.palette.common.black, 0.15),
   },
+  "& .MuiListItemText-root": {
+    marginTop: "3px",
+    marginBottom: "3px",
+  },
+  "& .MuiListItemText-primary": {
+    fontSize: 14,
+  },
+  "& .MuiListItemText-secondary": {
+    fontSize: 9.5,
+  },
+  "& .MuiListItemAvatar-root": {
+    width: "5%",
+    height: "5%",
+    minWidth: 35,
+  },
+  "& .MuiAvatar-root": {
+    width: "75%",
+    height: "80%",
+  },
+  "& .MuiListItem-root": {
+    py: 1,
+  },
 }));
 
 export default function NavbarListLink() {
@@ -37,7 +59,7 @@ export default function NavbarListLink() {
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
-        sx={{ ml: 2 }}
+        sx={{}}
       />
     </ListItemCustom>
   );
