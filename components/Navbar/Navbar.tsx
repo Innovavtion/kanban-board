@@ -21,6 +21,7 @@ import {
 // Icons Mui
 import SettingsIcon from "@mui/icons-material/Settings";
 import MenuIcon from "@mui/icons-material/Menu";
+import NavbarListLink from "./NavbarListLink";
 
 type Props = {
   mode: boolean;
@@ -60,6 +61,7 @@ export default function Navbar({ mode, setMode }: Props) {
               <MenuIcon />
             </Button>
             <NavbarLogo />
+            <NavbarListLink />
           </Typography>
           <NavbarInput />
           <IconButton color="inherit" onClick={handleClick}>
