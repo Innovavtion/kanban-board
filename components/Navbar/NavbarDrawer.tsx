@@ -63,7 +63,7 @@ export default function NavbarDrawer({
         },
       }}
       variant="persistent"
-      anchor="left"
+      anchor="right"
       open={open}
     >
       <DrawerHeader
@@ -74,7 +74,7 @@ export default function NavbarDrawer({
         }}
       >
         <IconButton onClick={() => drawerOpen(open)} color="inherit">
-          {theme.direction === "ltr" ? (
+          {theme.direction === "rtl" ? (
             <ChevronLeftIcon sx={{ p: 0 }} />
           ) : (
             <ChevronRightIcon sx={{ p: 0 }} />

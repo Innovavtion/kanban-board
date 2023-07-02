@@ -13,7 +13,6 @@ import NavbarSubmenuItem from "./NavbarSubmenuItem";
 import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
 
 // Icons Mui
-import MenuIcon from "@mui/icons-material/Menu";
 import AppsIcon from "@mui/icons-material/Apps";
 
 type Props = {
@@ -34,14 +33,6 @@ export default function Navbar({ mode, setMode }: Props) {
       <AppBar position="static" sx={{ height: 50, boxShadow: 0 }}>
         <Toolbar sx={{ mt: -0.85 }}>
           <Typography sx={{ flexGrow: 1 }}>
-            <Button
-              color="inherit"
-              aria-label="open drawer"
-              onClick={() => drawerOpen(open)}
-              sx={{ minWidth: 5, px: "3px" }}
-            >
-              <AppsIcon />
-            </Button>
             <NavbarLogo />
             <NavbarMenuItem text="Рабочие пространства" assignment="work" />
             <NavbarMenuItem text="Недавние" assignment="recent">
@@ -51,6 +42,14 @@ export default function Navbar({ mode, setMode }: Props) {
             <NavbarMenuItem text="В избранном" assignment="favorite" />
           </Typography>
           <NavbarSearch />
+          <Button
+            color="inherit"
+            aria-label="open drawer"
+            onClick={() => drawerOpen(open)}
+            sx={{ minWidth: 5, px: "14px" }}
+          >
+            <AppsIcon />
+          </Button>
         </Toolbar>
       </AppBar>
       <NavbarDrawer

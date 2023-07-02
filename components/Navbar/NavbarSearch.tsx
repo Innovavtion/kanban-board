@@ -29,11 +29,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: "0",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.2),
     },
     "&:focus": {
       cursor: "text",
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.2),
       width: "20ch",
     },
     // При ширине 900 и меньше, сделать инпут при фокусе меньше
