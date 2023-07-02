@@ -2,29 +2,27 @@
 import { useTheme } from "@mui/material/styles";
 
 // Components Mui
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Divider from "@mui/material/Divider";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import {
+  Drawer,
+  IconButton,
+  Divider,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  Typography,
+} from "@mui/material";
 
 // Icons Mui
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
 // Styles Mui
 import { styled } from "@mui/material/styles";
-import { Typography } from "@mui/material";
 
 // Drawer Styles Mui
 const DrawerHeader = styled("div")(({ theme }) => ({
