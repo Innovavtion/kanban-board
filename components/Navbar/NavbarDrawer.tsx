@@ -137,18 +137,6 @@ export default function NavbarDrawer({
             >
               {theme.palette.mode === "dark" ? (
                 <>
-                  <Brightness7Icon />
-                  <Typography
-                    sx={{
-                      textAlign: "center",
-                      fontSize: 10,
-                    }}
-                  >
-                    Theme dark
-                  </Typography>
-                </>
-              ) : (
-                <>
                   <Brightness4Icon />
                   <Typography
                     sx={{
@@ -156,7 +144,19 @@ export default function NavbarDrawer({
                       fontSize: 10,
                     }}
                   >
-                    Theme white
+                    Dark
+                  </Typography>
+                </>
+              ) : (
+                <>
+                  <Brightness7Icon />
+                  <Typography
+                    sx={{
+                      textAlign: "center",
+                      fontSize: 10,
+                    }}
+                  >
+                    White
                   </Typography>
                 </>
               )}
