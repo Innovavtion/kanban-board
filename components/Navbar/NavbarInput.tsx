@@ -37,6 +37,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       backgroundColor: alpha(theme.palette.common.white, 0.25),
       width: "20ch",
     },
+    // При ширине 900 и меньше, сделать инпут при фокусе меньше
+    [theme.breakpoints.down("md")]: {
+      "&:focus": {
+        width: "15ch",
+      },
+    },
   },
 }));
 
