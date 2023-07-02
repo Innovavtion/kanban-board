@@ -3,25 +3,16 @@
 import { useState } from "react";
 
 // Components Navbar
-import NavbarInput from "./NavbarInput";
+import NavbarSearch from "./NavbarSearch";
 import NavbarDrawer from "./NavbarDrawer";
 import NavbarLogo from "./NavbarLogo";
-import NavbarMenu from "./NavbarMenu";
-import NavbarListLink from "./NavbarListLink";
-import NavbarListLinkItem from "./NavbarListLinkItem";
+import NavbarMenuItem from "./NavbarMenuItem";
+import NavbarSubmenuItem from "./NavbarSubmenuItem";
 
 // Components Mui
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  IconButton,
-  Button,
-} from "@mui/material";
+import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
 
 // Icons Mui
-import SettingsIcon from "@mui/icons-material/Settings";
 import MenuIcon from "@mui/icons-material/Menu";
 
 type Props = {
@@ -35,17 +26,6 @@ export default function Navbar({ mode, setMode }: Props) {
 
   const drawerOpen = (open: boolean) => {
     setOpen(!open);
-  };
-
-  // Open Menu
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const openMenu = Boolean(anchorEl);
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
   };
 
   return (
@@ -62,17 +42,14 @@ export default function Navbar({ mode, setMode }: Props) {
               <MenuIcon />
             </Button>
             <NavbarLogo />
-            <NavbarListLink text="Рабочие пространства" assignment="work" />
-            <NavbarListLink text="Недавние" assignment="recent">
-              <NavbarListLinkItem />
-              <NavbarListLinkItem />
-            </NavbarListLink>
-            <NavbarListLink text="В избранном" assignment="favorite" />
+            <NavbarMenuItem text="Рабочие пространства" assignment="work" />
+            <NavbarMenuItem text="Недавние" assignment="recent">
+              <NavbarSubmenuItem />
+              <NavbarSubmenuItem />
+            </NavbarMenuItem>
+            <NavbarMenuItem text="В избранном" assignment="favorite" />
           </Typography>
-          <NavbarInput />
-          <IconButton color="inherit" onClick={handleClick}>
-            <SettingsIcon />
-          </IconButton>
+          <NavbarSearch />
         </Toolbar>
       </AppBar>
       <NavbarDrawer
@@ -80,13 +57,6 @@ export default function Navbar({ mode, setMode }: Props) {
         setMode={setMode}
         open={open}
         drawerOpen={drawerOpen}
-      />
-      <NavbarMenu
-        anchorEl={anchorEl}
-        openMenu={openMenu}
-        handleClose={handleClose}
-        mode={mode}
-        setMode={setMode}
       />
     </Box>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavbarContainerSubmenu from "./NavbarContainerSubmenu";
+import NavbarSubmenuSubstrate from "./NavbarSubmenuSubstrate";
 import { Typography, Button, Menu, List } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
@@ -9,7 +9,7 @@ type Props = {
   text: string;
 };
 
-export default function NavbarListLink({ children, assignment, text }: Props) {
+export default function NavbarMenuItem({ children, assignment, text }: Props) {
   // Open Menu
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -62,7 +62,7 @@ export default function NavbarListLink({ children, assignment, text }: Props) {
           {children?.toString.length != null ? (
             children
           ) : (
-            <NavbarContainerSubmenu assignment={assignment} />
+            <NavbarSubmenuSubstrate assignment={assignment} />
           )}
         </List>
       </Menu>

@@ -38,7 +38,7 @@ const ListItemCustom = styled(ListItem)(({ theme }) => ({
   },
 }));
 
-export default function NavbarListLink() {
+export default function NavbarSubmenuItem() {
   const [value, setValue] = useState<number | null>(null);
   return (
     <ListItemCustom>

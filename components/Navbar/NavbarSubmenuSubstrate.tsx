@@ -17,7 +17,7 @@ type Props = {
   assignment: "work" | "recent" | "favorite";
 };
 
-export default function NavbarContainerSubmenu({ assignment }: Props) {
+export default function NavbarSubmenuSubstrate({ assignment }: Props) {
   let content;
 
   if (assignment === "work") {

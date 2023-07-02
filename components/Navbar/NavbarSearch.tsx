@@ -45,7 +45,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavbarInput() {
+export default function NavbarSearch() {
   return (
     <Search sx={{ mx: 0 }}>
       <SearchIconWrapper>
