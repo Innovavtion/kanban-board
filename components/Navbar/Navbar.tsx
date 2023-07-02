@@ -8,6 +8,7 @@ import NavbarDrawer from "./NavbarDrawer";
 import NavbarLogo from "./NavbarLogo";
 import NavbarMenuItem from "./NavbarMenuItem";
 import NavbarSubmenuItem from "./NavbarSubmenuItem";
+import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
 
 // Components Mui
 import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
@@ -40,6 +41,9 @@ export default function Navbar({ mode, setMode }: Props) {
               <NavbarSubmenuItem />
             </NavbarMenuItem>
             <NavbarMenuItem text="В избранном" assignment="favorite" />
+            <NavbarMenuItem text="Шаблоны" assignment="favorite">
+              <NavbarSubmenuTemplates />
+            </NavbarMenuItem>
           </Typography>
           <NavbarSearch />
           <Button

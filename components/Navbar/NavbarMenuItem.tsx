@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { styled, alpha } from "@mui/material/styles";
 import NavbarSubmenuSubstrate from "./NavbarSubmenuSubstrate";
 import { Typography, Button, Menu, List } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -8,6 +9,13 @@ type Props = {
   assignment: "work" | "recent" | "favorite";
   text: string;
 };
+
+const MenuCustom = styled(Menu)(({ theme }) => ({
+  ul: {
+    paddingTop: "2.5px",
+    paddingBottom: "2.5px",
+  },
+}));
 
 export default function NavbarMenuItem({ children, assignment, text }: Props) {
   // Open Menu
@@ -40,7 +48,7 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
         </Typography>
         <ExpandMoreIcon sx={{}} />
       </Button>
-      <Menu
+      <MenuCustom
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -65,7 +73,7 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
             <NavbarSubmenuSubstrate assignment={assignment} />
           )}
         </List>
-      </Menu>
+      </MenuCustom>
     </>
   );
 }
