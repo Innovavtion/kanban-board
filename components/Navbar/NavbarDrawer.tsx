@@ -18,7 +18,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import ChatIcon from "@mui/icons-material/Chat";
 import MailIcon from "@mui/icons-material/Mail";
 
 // Styles Mui
@@ -83,7 +83,7 @@ export default function NavbarDrawer({
       </DrawerHeader>
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {["Chat"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton sx={{ justifyContent: "center" }}>
               <ListItemIcon
@@ -95,7 +95,7 @@ export default function NavbarDrawer({
                   color: "inherit",
                 }}
               >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <ChatIcon /> : <MailIcon />}
                 <Typography
                   sx={{
                     textAlign: "center",
@@ -111,7 +111,6 @@ export default function NavbarDrawer({
           </ListItem>
         ))}
       </List>
-      <Divider />
       <List
         sx={{
           display: "flex",
