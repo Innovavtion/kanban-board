@@ -44,6 +44,22 @@ export default function Navbar({ mode, setMode }: Props) {
             <NavbarMenuItem text="Шаблоны" assignment="favorite">
               <NavbarSubmenuTemplates />
             </NavbarMenuItem>
+            <Button
+              aria-label="create border"
+              sx={{
+                color: "inherit",
+                minWidth: 5,
+                px: "14px",
+                py: "3.5px",
+                ml: "5px",
+                backgroundColor: "#23bf0b",
+                textTransform: "none",
+                fontSize: 14,
+                ":hover": { backgroundColor: "#4cf233" },
+              }}
+            >
+              Создать
+            </Button>
           </Typography>
           <NavbarSearch />
           <Button
