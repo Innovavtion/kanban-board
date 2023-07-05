@@ -84,9 +84,9 @@ export default function Navbar({ mode, setMode }: Props) {
               </>
             ) : (
               <Button
+                color="inherit"
                 aria-label="create border"
                 sx={{
-                  color: "inherit",
                   minWidth: 5,
                   px: "14px",
                   py: "3.5px",
@@ -107,13 +107,13 @@ export default function Navbar({ mode, setMode }: Props) {
             <AppsIcon />
           </Button>
         </Toolbar>
+        <NavbarDrawer
+          mode={mode}
+          setMode={setMode}
+          open={open}
+          drawerOpen={drawerOpen}
+        />
       </AppBar>
-      <NavbarDrawer
-        mode={mode}
-        setMode={setMode}
-        open={open}
-        drawerOpen={drawerOpen}
-      />
     </Box>
   );
 }
