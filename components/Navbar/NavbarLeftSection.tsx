@@ -9,9 +9,15 @@ import DehazeIcon from "@mui/icons-material/Dehaze";
 
 type Props = {
   navbarSize: any;
+  openAdaptiveMenu: boolean;
+  drawerOpenAdaptiveMenu: (openAdaptiveMenu: boolean) => void;
 };
 
-export default function NavbarLeftSection({ navbarSize }: Props) {
+export default function NavbarLeftSection({
+  navbarSize,
+  openAdaptiveMenu,
+  drawerOpenAdaptiveMenu,
+}: Props) {
   return (
     <Box sx={{ display: "flex" }}>
       {navbarSize.clientWidth < 1100 ? (
@@ -25,6 +31,7 @@ export default function NavbarLeftSection({ navbarSize }: Props) {
             ml: "5px",
             ":hover": { backgroundColor: "rgba(255, 255, 255, 0.08)" },
           }}
+          onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
         >
           <DehazeIcon />
         </Button>

@@ -7,6 +7,7 @@ import NavbarLeftSection from "./NavbarLeftSection";
 import NavbarDrawer from "./NavbarDrawer";
 
 import { AppBar, Box, Toolbar } from "@mui/material";
+import NavbarDrawerAdaptiveMenu from "./NavbarDrawerAdaptiveMenu";
 
 type Props = {
   mode: boolean;
@@ -19,6 +20,13 @@ export default function Navbar({ mode, setMode }: Props) {
 
   const drawerOpen = (open: boolean) => {
     setOpen(!open);
+  };
+
+  // Open Adaptive Menu
+  const [openAdaptiveMenu, setOpenAdaptiveMenu] = useState(false);
+
+  const drawerOpenAdaptiveMenu = (openAdaptiveMenu: boolean) => {
+    setOpenAdaptiveMenu(!openAdaptiveMenu);
   };
 
   // Adaptive navbar
@@ -46,7 +54,11 @@ export default function Navbar({ mode, setMode }: Props) {
         <Toolbar
           sx={{ display: "flex", justifyContent: "space-between", mt: -0.85 }}
         >
-          <NavbarLeftSection navbarSize={size} />
+          <NavbarLeftSection
+            navbarSize={size}
+            openAdaptiveMenu={openAdaptiveMenu}
+            drawerOpenAdaptiveMenu={drawerOpenAdaptiveMenu}
+          />
           <NavbarRightSection open={open} drawerOpen={drawerOpen} />
         </Toolbar>
         <NavbarDrawer
@@ -54,6 +66,11 @@ export default function Navbar({ mode, setMode }: Props) {
           setMode={setMode}
           open={open}
           drawerOpen={drawerOpen}
+        />
+        <NavbarDrawerAdaptiveMenu
+          openAdaptiveMenu={openAdaptiveMenu}
+          drawerOpenAdaptiveMenu={drawerOpenAdaptiveMenu}
+          navbarSize={size}
         />
       </AppBar>
     </Box>
