@@ -5,7 +5,7 @@ import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
 
 import { Button, Box } from "@mui/material";
 
-import DensityMediumIcon from "@mui/icons-material/DensityMedium";
+import DehazeIcon from "@mui/icons-material/Dehaze";
 
 type Props = {
   navbarSize: any;
@@ -20,12 +20,13 @@ export default function NavbarLeftSection({ navbarSize }: Props) {
           aria-label="create border"
           sx={{
             minWidth: 5,
-            px: "14px",
-            py: "3.5px",
+            px: "10px",
+            py: "6px",
             ml: "5px",
+            ":hover": { backgroundColor: "rgba(255, 255, 255, 0.08)" },
           }}
         >
-          <DensityMediumIcon />
+          <DehazeIcon />
         </Button>
       ) : (
         <>

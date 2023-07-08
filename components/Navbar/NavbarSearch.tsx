@@ -21,7 +21,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(0.7, 1, 0.7, 0),
+    padding: theme.spacing(0.8, 1, 0.8, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
@@ -29,7 +29,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: "0",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: alpha(theme.palette.common.white, 0.2),
+      backgroundColor: alpha(theme.palette.common.white, 0.08),
     },
     "&:focus": {
       cursor: "text",
@@ -40,6 +40,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.down("md")]: {
       "&:focus": {
         width: "15ch",
+      },
+    },
+    "@media (max-width: 320px)": {
+      "&:focus": {
+        width: "10.25ch",
       },
     },
   },

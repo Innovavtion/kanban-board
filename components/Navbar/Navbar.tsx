@@ -2,13 +2,11 @@
 
 import { useState, useRef, useEffect } from "react";
 
-// Components Mui
-import { AppBar, Box, Toolbar } from "@mui/material";
-
-// Icons Mui
+import NavbarRightSection from "./NavbarRightSection";
 import NavbarLeftSection from "./NavbarLeftSection";
 import NavbarDrawer from "./NavbarDrawer";
-import NavbarRightSection from "./NavbarRightSection";
+
+import { AppBar, Box, Toolbar } from "@mui/material";
 
 type Props = {
   mode: boolean;
