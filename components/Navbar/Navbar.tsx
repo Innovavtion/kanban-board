@@ -65,7 +65,11 @@ export default function Navbar({ mode, setMode }: Props) {
             openAdaptiveMenu={openAdaptiveMenu}
             drawerOpenAdaptiveMenu={drawerOpenAdaptiveMenu}
           />
-          <NavbarRightSection open={open} drawerOpen={drawerOpen} />
+          <NavbarRightSection
+            navbarSize={size}
+            open={open}
+            drawerOpen={drawerOpen}
+          />
         </Toolbar>
         <NavbarDrawer
           mode={mode}

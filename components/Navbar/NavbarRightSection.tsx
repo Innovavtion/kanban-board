@@ -5,14 +5,19 @@ import { Button, Box } from "@mui/material";
 import AppsIcon from "@mui/icons-material/Apps";
 
 type Props = {
+  navbarSize: any;
   open: boolean;
   drawerOpen: (open: boolean) => void;
 };
 
-export default function NavbarRightSection({ open, drawerOpen }: Props) {
+export default function NavbarRightSection({
+  navbarSize,
+  open,
+  drawerOpen,
+}: Props) {
   return (
     <Box sx={{ display: "flex" }}>
-      <NavbarSearch />
+      <NavbarSearch navbarSize={navbarSize} />
       <Button
         color="inherit"
         aria-label="open drawer"

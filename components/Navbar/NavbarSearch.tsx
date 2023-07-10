@@ -1,6 +1,11 @@
+import { useState } from "react";
+
 import { styled, alpha } from "@mui/material/styles";
 import { InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -50,16 +55,92 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavbarSearch() {
+const StyledInputModals = styled(InputBase)(({ theme }) => ({
+  backgroundColor: alpha(theme.palette.common.white, 0.2),
+  borderRadius: theme.shape.borderRadius,
+  width: "95%",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+  },
+}));
+
+type Props = {
+  navbarSize: any;
+};
+
+export default function NavbarSearch({ navbarSize }: Props) {
+  const drawerWidth = navbarSize.clientWidth;
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <Search sx={{ mx: 0 }}>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase
-        placeholder="Search…"
-        inputProps={{ "aria-label": "search" }}
-      />
-    </Search>
+    <>
+      {drawerWidth > 1100 ? (
+        <Search sx={{ mx: 0 }}>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+      ) : (
+        <>
+          <Box
+            sx={{
+              "&:hover": {
+                cursor: "pointer",
+                backgroundColor: "rgba(255, 255, 255, 0.08)",
+              },
+            }}
+            onClick={handleOpen}
+          >
+            <SearchIconWrapper
+              sx={{
+                position: "relative",
+              }}
+            >
+              <SearchIcon />
+            </SearchIconWrapper>
+          </Box>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                mt: "7px",
+              }}
+            >
+              <Search
+                sx={{
+                  width: "95%",
+                  ml: "4.5%",
+                }}
+              >
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputModals
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </Search>
+            </Box>
+          </Modal>
+        </>
+      )}
+    </>
   );
 }
