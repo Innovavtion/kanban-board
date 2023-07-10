@@ -11,15 +11,17 @@ import {
   ListItemButton,
   ListItemIcon,
   Typography,
+  Button,
+  Box,
 } from "@mui/material";
 
 // Icons Mui
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import ChatIcon from "@mui/icons-material/Chat";
-import MailIcon from "@mui/icons-material/Mail";
+import NavbarLogo from "./NavbarLogo";
+import NavbarMenuItem from "./NavbarMenuItem";
+import NavbarSubmenuItem from "./NavbarSubmenuItem";
+import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
 
 // Styles Mui
 import { styled } from "@mui/material/styles";
@@ -83,8 +85,11 @@ export default function NavbarDrawerAdaptiveMenu({
           "@media (min-width: 600px)": {
             minHeight: "49px",
           },
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
+        <NavbarLogo />
         <IconButton
           onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
           color="inherit"
@@ -97,6 +102,40 @@ export default function NavbarDrawerAdaptiveMenu({
         </IconButton>
       </DrawerHeader>
       <Divider />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-around",
+          height: "275px",
+        }}
+      >
+        <NavbarMenuItem text="Рабочие пространства" assignment="work" />
+        <NavbarMenuItem text="Недавние" assignment="recent">
+          <NavbarSubmenuItem />
+          <NavbarSubmenuItem />
+        </NavbarMenuItem>
+        <NavbarMenuItem text="В избранном" assignment="favorite" />
+        <NavbarMenuItem text="Шаблоны" assignment="favorite">
+          <NavbarSubmenuTemplates />
+        </NavbarMenuItem>
+        <Button
+          aria-label="create border"
+          sx={{
+            color: "inherit",
+            minWidth: 200,
+            px: "14px",
+            py: "3.5px",
+            backgroundColor: "#23bf0b",
+            textTransform: "none",
+            fontSize: 14,
+            ":hover": { backgroundColor: "#4cf233" },
+          }}
+        >
+          Создать
+        </Button>
+      </Box>
     </Drawer>
   );
 }

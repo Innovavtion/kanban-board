@@ -52,7 +52,13 @@ export default function Navbar({ mode, setMode }: Props) {
     <Box sx={{ flexGrow: 1 }} ref={navbarRef}>
       <AppBar position="static" sx={{ height: 50, boxShadow: 0 }}>
         <Toolbar
-          sx={{ display: "flex", justifyContent: "space-between", mt: -0.85 }}
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            mt: -0.85,
+            minHeight: "64px",
+            paddingX: "24px",
+          }}
         >
           <NavbarLeftSection
             navbarSize={size}

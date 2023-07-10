@@ -46,7 +46,9 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
         >
           {text}
         </Typography>
-        <ExpandMoreIcon sx={{}} />
+        <ExpandMoreIcon
+          sx={{ "@media (max-width: 1100px)": { display: "none" } }}
+        />
       </Button>
       <MenuCustom
         id="basic-menu"
@@ -57,6 +59,26 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
           "aria-labelledby": "basic-button",
         }}
         sx={{ top: 12 }}
+        PaperProps={{
+          sx: {
+            "&:before": {
+              display: "block",
+              position: "absolute",
+              top: 0,
+              right: 14,
+              width: 10,
+              height: 10,
+              bgcolor: "background.paper",
+              transform: "translateY(-50%) rotate(45deg)",
+              zIndex: 0,
+            },
+            "@media (max-width: 1100px)": {
+              mt: -1,
+            },
+          },
+        }}
+        transformOrigin={{ horizontal: "center", vertical: "top" }}
+        anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
       >
         <List
           sx={{
@@ -65,6 +87,9 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
             maxWidth: 305,
             cursor: "pointer",
             py: 0.1,
+            "@media (max-width: 320px)": {
+              minWidth: 200,
+            },
           }}
         >
           {children?.toString.length != null ? (

@@ -42,8 +42,8 @@ export default function NavbarSubmenuSubstrate({ assignment }: Props) {
     content = (
       <>
         <LocalActivityIcon fontSize="large" />
-        <Typography sx={{ textAlign: "center", fontSize: 12.5 }}>
-          Чтобы быстро находить важные доски, отмечай их.
+        <Typography sx={{ textAlign: "center", fontSize: 12.5, px: "5px" }}>
+          Чтобы быстро находить важные доски, отмечайте их.
         </Typography>
       </>
     );
