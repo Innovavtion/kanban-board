@@ -20,7 +20,7 @@ export default function NavbarLeftSection({
 }: Props) {
   return (
     <Box sx={{ display: "flex" }}>
-      {navbarSize.clientWidth < 1100 ? (
+      {navbarSize.clientWidth <= 1100 ? (
         <Button
           color="inherit"
           aria-label="create border"

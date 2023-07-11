@@ -52,7 +52,7 @@ export default function NavbarDrawerAdaptiveMenu({
   const drawerWidth = navbarSize.clientWidth;
 
   const removeOpenAdaptiveMenu = () => {
-    if (drawerWidth >= 1100 && openAdaptiveMenu === true) {
+    if (drawerWidth > 1100 && openAdaptiveMenu === true) {
       drawerOpenAdaptiveMenu(openAdaptiveMenu);
     }
   };

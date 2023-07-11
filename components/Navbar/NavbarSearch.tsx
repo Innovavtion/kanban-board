@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 import { styled, alpha } from "@mui/material/styles";
-import { InputBase } from "@mui/material";
+import { InputBase, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import NavbarSubmenuItem from "./NavbarSubmenuItem";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,7 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const StyledInputModals = styled(InputBase)(({ theme }) => ({
   backgroundColor: alpha(theme.palette.common.white, 0.2),
   borderRadius: theme.shape.borderRadius,
-  width: "95%",
+  width: "100%",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -118,15 +119,18 @@ export default function NavbarSearch({ navbarSize }: Props) {
             <Box
               sx={{
                 display: "flex",
+                alignItems: "center",
                 justifyContent: "center",
-                width: "100%",
+                flexDirection: "column",
+                width: "95%",
                 mt: "7px",
+                mx: "auto",
               }}
             >
               <Search
                 sx={{
-                  width: "95%",
-                  ml: "4.5%",
+                  width: "100%",
+                  ml: "0px",
                 }}
               >
                 <SearchIconWrapper>
@@ -137,6 +141,25 @@ export default function NavbarSearch({ navbarSize }: Props) {
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
+              <Box
+                sx={{
+                  width: "100%",
+                  minHeight: "50px",
+                  mt: "7px",
+                  backgroundColor: "#121212",
+                  borderRadius: "4px",
+                  py: "10px",
+                }}
+              >
+                <Typography
+                  sx={{ ml: "16px", fontSize: "10px", fontWeight: "bold" }}
+                  variant="overline"
+                >
+                  Недавние доски
+                </Typography>
+                <NavbarSubmenuItem />
+                <NavbarSubmenuItem />
+              </Box>
             </Box>
           </Modal>
         </>
