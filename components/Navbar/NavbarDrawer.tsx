@@ -68,7 +68,7 @@ export default function NavbarDrawer({
     >
       <DrawerHeader
         sx={{
-          "@media (min-width: 600px)": {
+          "@media (min-width: 200px)": {
             minHeight: "49px",
           },
         }}

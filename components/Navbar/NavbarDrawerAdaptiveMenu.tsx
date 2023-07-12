@@ -82,7 +82,7 @@ export default function NavbarDrawerAdaptiveMenu({
     >
       <DrawerHeader
         sx={{
-          "@media (min-width: 600px)": {
+          "@media (min-width: 200px)": {
             minHeight: "49px",
           },
           display: "flex",
