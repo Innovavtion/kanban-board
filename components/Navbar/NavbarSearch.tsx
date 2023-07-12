@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { styled, alpha } from "@mui/material/styles";
 import { InputBase, Typography } from "@mui/material";
@@ -78,18 +78,60 @@ export default function NavbarSearch({ navbarSize }: Props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const searchBoxRef = useRef<HTMLElement>(null);
+
+  const openSearchBox = () => {
+    setTimeout(() => {
+      if (searchBoxRef.current) {
+        searchBoxRef.current.style.display = "block";
+      }
+    }, 275);
+  };
+
+  const closeSearchBox = () => {
+    if (searchBoxRef.current) {
+      searchBoxRef.current.style.display = "none";
+    }
+  };
+
   return (
     <>
       {drawerWidth > 1100 ? (
-        <Search sx={{ mx: 0 }}>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
+        <>
+          <Search sx={{ mx: 0 }}>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+              onFocus={openSearchBox}
+              onBlur={closeSearchBox}
+            />
+            <Box
+              ref={searchBoxRef}
+              sx={{
+                position: "absolute",
+                display: "none",
+                width: "100%",
+                minHeight: "50px",
+                mt: "12px",
+                backgroundColor: "rgba(255, 255, 255, 0.09)",
+                borderRadius: "4px",
+                py: "10px",
+              }}
+            >
+              <Typography
+                sx={{ ml: "16px", fontSize: "10px", fontWeight: "bold" }}
+                variant="overline"
+              >
+                Недавние доски
+              </Typography>
+              <NavbarSubmenuItem />
+              <NavbarSubmenuItem />
+            </Box>
+          </Search>
+        </>
       ) : (
         <>
           <Box
@@ -114,7 +156,7 @@ export default function NavbarSearch({ navbarSize }: Props) {
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
-            sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+            sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", outline: "none" }}
           >
             <Box
               sx={{

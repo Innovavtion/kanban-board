@@ -39,8 +39,6 @@ export default function Navbar({ mode, setMode }: Props) {
   };
 
   useEffect(() => {
-    console.log(navbarRef.current?.offsetWidth);
-
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
     return () => {
