@@ -1,18 +1,14 @@
 import {
   Typography,
-  List,
-  ListItem,
-  ListItemAvatar,
   Avatar,
+  ListItemAvatar,
+  ListItem,
   ListItemText,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@mui/material";
-
 import { styled, alpha } from "@mui/material/styles";
-import NavbarSubmenuItem from "./NavbarSubmenuItem";
-
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ImageIcon from "@mui/icons-material/Image";
 

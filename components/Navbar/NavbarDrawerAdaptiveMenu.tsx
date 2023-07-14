@@ -1,31 +1,20 @@
+import { useEffect } from "react";
+
 // Theme Mui
-import { useTheme } from "@mui/material/styles";
+import { useTheme, styled } from "@mui/material/styles";
 
-// Components Mui
-import {
-  Drawer,
-  IconButton,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  Typography,
-  Button,
-  Box,
-} from "@mui/material";
-
-// Icons Mui
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+// Custom Components
 import NavbarLogo from "./NavbarLogo";
 import NavbarMenuItem from "./NavbarMenuItem";
 import NavbarSubmenuItem from "./NavbarSubmenuItem";
 import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
 
-// Styles Mui
-import { styled } from "@mui/material/styles";
-import { useEffect } from "react";
+// Components Mui
+import { Drawer, IconButton, Divider, Button, Box } from "@mui/material";
+
+// Icons Mui
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 // Drawer Styles Mui
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -40,7 +29,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 type Props = {
   openAdaptiveMenu: boolean;
   drawerOpenAdaptiveMenu: (openAdaptiveMenu: boolean) => void;
-  navbarSize: any;
+  navbarSize: { clientWidth?: number; clientHeight?: number };
 };
 
 export default function NavbarDrawerAdaptiveMenu({
@@ -49,10 +38,14 @@ export default function NavbarDrawerAdaptiveMenu({
   navbarSize,
 }: Props) {
   const theme = useTheme();
-  const drawerWidth = navbarSize.clientWidth;
+  const drawerWidth: number | undefined = navbarSize.clientWidth;
 
   const removeOpenAdaptiveMenu = () => {
-    if (drawerWidth > 1100 && openAdaptiveMenu === true) {
+    if (
+      drawerWidth != undefined &&
+      drawerWidth > 1100 &&
+      openAdaptiveMenu === true
+    ) {
       drawerOpenAdaptiveMenu(openAdaptiveMenu);
     }
   };

@@ -1,12 +1,9 @@
 import { useState, useRef } from "react";
 
-import { styled, alpha } from "@mui/material/styles";
-import { InputBase, Typography } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import NavbarSubmenuItem from "./NavbarSubmenuItem";
+import { styled, alpha } from "@mui/material/styles";
+import { InputBase, Typography, Box, Modal } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -139,6 +136,7 @@ export default function NavbarSearch({ navbarSize }: Props) {
               "&:hover": {
                 cursor: "pointer",
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
+                borderRadius: "4px",
               },
             }}
             onClick={handleOpen}
