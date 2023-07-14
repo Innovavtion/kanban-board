@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 import { styled, alpha } from "@mui/material/styles";
 import { InputBase, Typography } from "@mui/material";

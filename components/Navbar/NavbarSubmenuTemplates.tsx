@@ -17,6 +17,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ImageIcon from "@mui/icons-material/Image";
 
 const ListItemCustom = styled(ListItem)(({ theme }) => ({
+  paddingLeft: "12px",
   "&:hover": {
     cursor: "pointer",
     backgroundColor: alpha(theme.palette.common.black, 0.15),
