@@ -5,6 +5,8 @@ import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
 
 import { Button, Box } from "@mui/material";
 
+import { styled } from "@mui/material/styles";
+
 import DehazeIcon from "@mui/icons-material/Dehaze";
 
 type Props = {
@@ -12,6 +14,27 @@ type Props = {
   openAdaptiveMenu: boolean;
   drawerOpenAdaptiveMenu: (openAdaptiveMenu: boolean) => void;
 };
+
+const ButtonOpen = styled(Button)(() => ({
+  color: "inherit",
+  minWidth: 5,
+  px: "10px",
+  py: "6px",
+  ml: "5px",
+  ":hover": { backgroundColor: "rgba(255, 255, 255, 0.08)" },
+}));
+
+const ButtonCreate = styled(Button)(() => ({
+  color: "inherit",
+  textTransform: "none",
+  fontSize: 14,
+  minWidth: 5,
+  px: "14px",
+  py: "3.5px",
+  ml: "5px",
+  backgroundColor: "#23bf0b",
+  ":hover": { backgroundColor: "#4cf233" },
+}));
 
 export default function NavbarLeftSection({
   navbarSize,
@@ -21,20 +44,12 @@ export default function NavbarLeftSection({
   return (
     <Box sx={{ display: "flex" }}>
       {navbarSize.clientWidth <= 1100 ? (
-        <Button
-          color="inherit"
+        <ButtonOpen
           aria-label="create border"
-          sx={{
-            minWidth: 5,
-            px: "10px",
-            py: "6px",
-            ml: "5px",
-            ":hover": { backgroundColor: "rgba(255, 255, 255, 0.08)" },
-          }}
           onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
         >
           <DehazeIcon />
-        </Button>
+        </ButtonOpen>
       ) : (
         <>
           <NavbarLogo />
@@ -47,22 +62,7 @@ export default function NavbarLeftSection({
           <NavbarMenuItem text="Шаблоны" assignment="favorite">
             <NavbarSubmenuTemplates />
           </NavbarMenuItem>
-          <Button
-            aria-label="create border"
-            sx={{
-              color: "inherit",
-              minWidth: 5,
-              px: "14px",
-              py: "3.5px",
-              ml: "5px",
-              backgroundColor: "#23bf0b",
-              textTransform: "none",
-              fontSize: 14,
-              ":hover": { backgroundColor: "#4cf233" },
-            }}
-          >
-            Создать
-          </Button>
+          <ButtonCreate aria-label="create border">Создать</ButtonCreate>
         </>
       )}
     </Box>

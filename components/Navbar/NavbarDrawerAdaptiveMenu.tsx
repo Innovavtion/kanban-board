@@ -1,8 +1,5 @@
 import { useEffect } from "react";
 
-// Theme Mui
-import { useTheme, styled } from "@mui/material/styles";
-
 // Custom Components
 import NavbarLogo from "./NavbarLogo";
 import NavbarMenuItem from "./NavbarMenuItem";
@@ -12,18 +9,26 @@ import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
 // Components Mui
 import { Drawer, IconButton, Divider, Button, Box } from "@mui/material";
 
+// Theme Mui
+import { useTheme, styled } from "@mui/material/styles";
+
 // Icons Mui
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-// Drawer Styles Mui
+const DrawerCustom = styled(Drawer)(() => ({
+  "& .MuiDrawer-paper": {
+    display: "flex",
+    boxSizing: "border-box",
+  },
+}));
+
 const DrawerHeader = styled("div")(({ theme }) => ({
+  ...theme.mixins.toolbar,
   display: "flex",
   alignItems: "center",
-  padding: theme.spacing(0, 2),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
   justifyContent: "flex-end",
+  padding: theme.spacing(0, 2),
 }));
 
 type Props = {
@@ -51,22 +56,16 @@ export default function NavbarDrawerAdaptiveMenu({
   };
 
   useEffect(() => {
-    window.addEventListener("removeAdaptiveMenu", removeOpenAdaptiveMenu);
     removeOpenAdaptiveMenu();
-    return () => {
-      window.removeEventListener("removeAdaptiveMenu", removeOpenAdaptiveMenu);
-    };
   });
 
   return (
-    <Drawer
+    <DrawerCustom
       sx={{
         width: drawerWidth,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
           width: drawerWidth,
-          boxSizing: "border-box",
-          display: "flex",
         },
       }}
       variant="persistent"
@@ -129,6 +128,6 @@ export default function NavbarDrawerAdaptiveMenu({
           Создать
         </Button>
       </Box>
-    </Drawer>
+    </DrawerCustom>
   );
 }

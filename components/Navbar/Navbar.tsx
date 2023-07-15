@@ -5,9 +5,9 @@ import { useState, useRef, useEffect } from "react";
 import NavbarRightSection from "./NavbarRightSection";
 import NavbarLeftSection from "./NavbarLeftSection";
 import NavbarDrawer from "./NavbarDrawer";
+import NavbarDrawerAdaptiveMenu from "./NavbarDrawerAdaptiveMenu";
 
 import { AppBar, Box, Toolbar } from "@mui/material";
-import NavbarDrawerAdaptiveMenu from "./NavbarDrawerAdaptiveMenu";
 
 type Props = {
   mode: boolean;

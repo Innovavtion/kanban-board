@@ -5,7 +5,7 @@ import { Button, Box } from "@mui/material";
 import AppsIcon from "@mui/icons-material/Apps";
 
 type Props = {
-  navbarSize: any;
+  navbarSize: { clientWidth?: number; clientHeight?: number };
   open: boolean;
   drawerOpen: (open: boolean) => void;
 };

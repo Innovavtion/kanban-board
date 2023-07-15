@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import NavbarSubmenuItem from "./NavbarSubmenuItem";
 import { styled, alpha } from "@mui/material/styles";
@@ -65,7 +65,7 @@ const StyledInputModals = styled(InputBase)(({ theme }) => ({
 }));
 
 type Props = {
-  navbarSize: any;
+  navbarSize: { clientWidth?: number; clientHeight?: number };
 };
 
 export default function NavbarSearch({ navbarSize }: Props) {
@@ -91,9 +91,19 @@ export default function NavbarSearch({ navbarSize }: Props) {
     }
   };
 
+  const removeAdaptiveSearch = () => {
+    if (drawerWidth != undefined && drawerWidth > 1100) {
+      handleClose();
+    }
+  };
+
+  useEffect(() => {
+    removeAdaptiveSearch();
+  });
+
   return (
     <>
-      {drawerWidth > 1100 ? (
+      {drawerWidth != undefined && drawerWidth > 1100 ? (
         <>
           <Search sx={{ mx: 0 }}>
             <SearchIconWrapper>
