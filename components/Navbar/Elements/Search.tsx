@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 
-import NavbarSubmenuItem from "./NavbarSubmenuItem";
+import NavbarSubmenuItem from "../Submenu/SubmenuItem";
 import { styled, alpha } from "@mui/material/styles";
 import { InputBase, Typography, Box, Modal } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";

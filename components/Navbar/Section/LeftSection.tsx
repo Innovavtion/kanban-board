@@ -1,7 +1,7 @@
-import NavbarLogo from "./NavbarLogo";
-import NavbarMenuItem from "./NavbarMenuItem";
-import NavbarSubmenuItem from "./NavbarSubmenuItem";
-import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
+import NavbarLogo from "../Elements/Logo";
+import NavbarMenuItem from "../Elements/MenuItem";
+import NavbarSubmenuItem from "../Submenu/SubmenuItem";
+import NavbarSubmenuTemplates from "../Submenu/SubmenuTemplates";
 
 import { Button, Box } from "@mui/material";
 

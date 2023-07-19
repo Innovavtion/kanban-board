@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { styled } from "@mui/material/styles";
-import NavbarSubmenuSubstrate from "./NavbarSubmenuSubstrate";
+import NavbarSubmenuSubstrate from "../Submenu/SubmenuSubstrate";
 import { Typography, Button, Menu, List } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 

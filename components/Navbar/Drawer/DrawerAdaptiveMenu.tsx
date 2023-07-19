@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 
 // Custom Components
-import NavbarLogo from "./NavbarLogo";
-import NavbarMenuItem from "./NavbarMenuItem";
-import NavbarSubmenuItem from "./NavbarSubmenuItem";
-import NavbarSubmenuTemplates from "./NavbarSubmenuTemplates";
+import NavbarLogo from "../Elements/Logo";
+import NavbarMenuItem from "../Elements/MenuItem";
+import NavbarSubmenuItem from "../Submenu/SubmenuItem";
+import NavbarSubmenuTemplates from "../Submenu/SubmenuTemplates";
 
 // Components Mui
 import { Drawer, IconButton, Divider, Button, Box } from "@mui/material";

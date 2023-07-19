@@ -1,4 +1,4 @@
-import NavbarSearch from "./NavbarSearch";
+import NavbarSearch from "../Elements/Search";
 
 import { Button, Box } from "@mui/material";
 

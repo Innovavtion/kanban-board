@@ -2,10 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 
-import NavbarRightSection from "./NavbarRightSection";
-import NavbarLeftSection from "./NavbarLeftSection";
-import NavbarDrawer from "./NavbarDrawer";
-import NavbarDrawerAdaptiveMenu from "./NavbarDrawerAdaptiveMenu";
+import NavbarRightSection from "./Section/NavbarRightSection";
+import NavbarLeftSection from "./Section/NavbarLeftSection";
+import Drawer from "./Drawer/Drawer";
+import DrawerAdaptiveMenu from "./Drawer/DrawerAdaptiveMenu";
 
 import { AppBar, Box, Toolbar } from "@mui/material";
 
@@ -69,13 +69,13 @@ export default function Navbar({ mode, setMode }: Props) {
             drawerOpen={drawerOpen}
           />
         </Toolbar>
-        <NavbarDrawer
+        <Drawer
           mode={mode}
           setMode={setMode}
           open={open}
           drawerOpen={drawerOpen}
         />
-        <NavbarDrawerAdaptiveMenu
+        <DrawerAdaptiveMenu
           openAdaptiveMenu={openAdaptiveMenu}
           drawerOpenAdaptiveMenu={drawerOpenAdaptiveMenu}
           navbarSize={size}
