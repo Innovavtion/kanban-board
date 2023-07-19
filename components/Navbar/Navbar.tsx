@@ -10,6 +10,14 @@ import DrawerApp from "./Drawer/App/App";
 import DrawerAdaptiveMenu from "./Drawer/AdaptiveMenu/AdaptiveMenu";
 
 import { AppBar, Box, Toolbar } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
+const CustomToolbar = styled(Toolbar)(() => ({
+  display: "flex",
+  justifyContent: "space-between",
+  minHeight: "64px",
+  paddingX: "24px",
+}));
 
 type Props = {
   mode: boolean;
@@ -23,23 +31,15 @@ export default function Navbar({ mode, setMode }: Props) {
 
   return (
     <Box sx={{ flexGrow: 1 }} ref={navbarRef}>
-      <AppBar position="static" sx={{ height: 50, boxShadow: 0 }}>
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            mt: -0.85,
-            minHeight: "64px",
-            paddingX: "24px",
-          }}
-        >
+      <AppBar sx={{ height: 50, boxShadow: 0 }} position="static">
+        <CustomToolbar sx={{ mt: -0.85 }}>
           <LeftSection
             navbarSize={size}
             openAdaptiveMenu={openAdaptiveMenu}
             drawerOpenAdaptiveMenu={drawerOpenAdaptiveMenu}
           />
           <RightSection navbarSize={size} open={open} drawerOpen={drawerOpen} />
-        </Toolbar>
+        </CustomToolbar>
         <DrawerApp
           mode={mode}
           setMode={setMode}
