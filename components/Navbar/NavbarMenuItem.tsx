@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import NavbarSubmenuSubstrate from "./NavbarSubmenuSubstrate";
 import { Typography, Button, Menu, List } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";

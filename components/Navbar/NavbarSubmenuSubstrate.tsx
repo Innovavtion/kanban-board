@@ -1,5 +1,3 @@
-"use client";
-
 import { Typography, Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
 

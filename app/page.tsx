@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Kanban",
-  description: "Generated Kanban-Board",
+  description: "Main Kanban-Board",
 };
 
 export default function Home() {
