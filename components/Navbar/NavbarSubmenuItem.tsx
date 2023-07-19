@@ -58,7 +58,6 @@ export default function NavbarSubmenuItem() {
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
-        sx={{}}
       />
     </ListItemCustom>
   );

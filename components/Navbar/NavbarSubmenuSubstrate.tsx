@@ -1,3 +1,5 @@
+"use client";
+
 import { Typography, Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -6,6 +8,10 @@ import AssessmentIcon from "@mui/icons-material/Assessment";
 import PermMediaIcon from "@mui/icons-material/PermMedia";
 
 const CustomContainer = styled(Container)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: 0,
   "$ .MuiContainer-root": {
     "@media (min-width: 600px)": {
       paddingLeft: "2px",
@@ -49,16 +55,5 @@ export default function NavbarSubmenuSubstrate({ assignment }: Props) {
     );
   }
 
-  return (
-    <CustomContainer
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        p: 0,
-      }}
-    >
-      {content}
-    </CustomContainer>
-  );
+  return <CustomContainer>{content}</CustomContainer>;
 }
