@@ -19,6 +19,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const DrawerCustom = styled(Drawer)(() => ({
+  flexShrink: 0,
   "& .MuiDrawer-paper": {
     display: "flex",
     boxSizing: "border-box",
@@ -29,8 +30,30 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
   display: "flex",
   alignItems: "center",
-  justifyContent: "flex-end",
+  justifyContent: "space-between",
   padding: theme.spacing(0, 2),
+  "@media (min-width: 200px)": {
+    minHeight: "49px",
+  },
+}));
+
+const BoxCustom = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "space-around",
+  height: "275px",
+}));
+
+const ButtonCreate = styled(Button)(() => ({
+  color: "inherit",
+  minWidth: 150,
+  px: "14px",
+  py: "3.5px",
+  backgroundColor: "#23bf0b",
+  textTransform: "none",
+  fontSize: 14,
+  ":hover": { backgroundColor: "#4cf233" },
 }));
 
 type Props = {
@@ -65,7 +88,6 @@ export default function NavbarDrawerAdaptiveMenu({
     <DrawerCustom
       sx={{
         width: drawerWidth,
-        flexShrink: 0,
         "& .MuiDrawer-paper": {
           width: drawerWidth,
         },
@@ -74,15 +96,7 @@ export default function NavbarDrawerAdaptiveMenu({
       anchor="left"
       open={openAdaptiveMenu}
     >
-      <DrawerHeader
-        sx={{
-          "@media (min-width: 200px)": {
-            minHeight: "49px",
-          },
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <DrawerHeader>
         <Logo />
         <IconButton
           onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
@@ -96,15 +110,7 @@ export default function NavbarDrawerAdaptiveMenu({
         </IconButton>
       </DrawerHeader>
       <Divider />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-around",
-          height: "275px",
-        }}
-      >
+      <BoxCustom>
         <MenuItem text="Рабочие пространства" assignment="work" />
         <MenuItem text="Недавние" assignment="recent">
           <SubmenuItem />
@@ -114,22 +120,8 @@ export default function NavbarDrawerAdaptiveMenu({
         <MenuItem text="Шаблоны" assignment="favorite">
           <SubmenuTemplates />
         </MenuItem>
-        <Button
-          aria-label="create border"
-          sx={{
-            color: "inherit",
-            minWidth: 200,
-            px: "14px",
-            py: "3.5px",
-            backgroundColor: "#23bf0b",
-            textTransform: "none",
-            fontSize: 14,
-            ":hover": { backgroundColor: "#4cf233" },
-          }}
-        >
-          Создать
-        </Button>
-      </Box>
+        <ButtonCreate aria-label="create border">Создать</ButtonCreate>
+      </BoxCustom>
     </DrawerCustom>
   );
 }

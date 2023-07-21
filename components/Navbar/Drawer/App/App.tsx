@@ -26,7 +26,18 @@ import MailIcon from "@mui/icons-material/Mail";
 // Styles Mui
 import { styled } from "@mui/material/styles";
 
-// Drawer Styles Mui
+const drawerWidth = 75;
+
+const DrawerCustom = styled(Drawer)(() => ({
+  width: drawerWidth,
+  flexShrink: 0,
+  "& .MuiDrawer-paper": {
+    width: drawerWidth,
+    boxSizing: "border-box",
+    display: "flex",
+  },
+}));
+
 const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
   display: "flex",
@@ -38,6 +49,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   },
 }));
 
+const ListEnd = styled(List)(() => ({
+  display: "flex",
+  alignItems: "flex-end",
+  height: "100%",
+}));
+
 const CustomListItemIcon = styled(ListItemIcon)(() => ({
   display: "flex",
   justifyContent: "center",
@@ -45,8 +62,6 @@ const CustomListItemIcon = styled(ListItemIcon)(() => ({
   alignItems: "center",
   color: "inherit",
 }));
-
-const drawerWidth = 75;
 
 type Props = {
   mode: boolean;
@@ -64,20 +79,7 @@ export default function NavbarDrawer({
   const theme = useTheme();
 
   return (
-    <Drawer
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: drawerWidth,
-          boxSizing: "border-box",
-          display: "flex",
-        },
-      }}
-      variant="persistent"
-      anchor="right"
-      open={open}
-    >
+    <DrawerCustom variant="persistent" anchor="right" open={open}>
       <DrawerHeader>
         <IconButton onClick={() => drawerOpen(open)} color="inherit">
           {theme.direction === "rtl" ? (
@@ -109,13 +111,7 @@ export default function NavbarDrawer({
           </ListItem>
         ))}
       </List>
-      <List
-        sx={{
-          display: "flex",
-          alignItems: "flex-end",
-          height: "100%",
-        }}
-      >
+      <ListEnd>
         <ListItem disablePadding>
           <ListItemButton
             sx={{ justifyContent: "center" }}
@@ -141,7 +137,7 @@ export default function NavbarDrawer({
             </CustomListItemIcon>
           </ListItemButton>
         </ListItem>
-      </List>
-    </Drawer>
+      </ListEnd>
+    </DrawerCustom>
   );
 }

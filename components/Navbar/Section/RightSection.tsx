@@ -1,4 +1,4 @@
-import NavbarSearch from "../Elements/Search";
+import Search from "../Elements/Search";
 
 import { Button, Box } from "@mui/material";
 
@@ -17,7 +17,7 @@ export default function NavbarRightSection({
 }: Props) {
   return (
     <Box sx={{ display: "flex" }}>
-      <NavbarSearch navbarSize={navbarSize} />
+      <Search navbarSize={navbarSize} />
       <Button
         color="inherit"
         aria-label="open drawer"

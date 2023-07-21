@@ -1,7 +1,7 @@
-import NavbarLogo from "../Elements/Logo";
-import NavbarMenuItem from "../Elements/MenuItem";
-import NavbarSubmenuItem from "../Submenu/SubmenuItem";
-import NavbarSubmenuTemplates from "../Submenu/SubmenuTemplates";
+import Logo from "../Elements/Logo";
+import MenuItem from "../Elements/MenuItem";
+import SubmenuItem from "../Submenu/SubmenuItem";
+import SubmenuTemplates from "../Submenu/SubmenuTemplates";
 
 import { Button, Box } from "@mui/material";
 
@@ -52,16 +52,16 @@ export default function NavbarLeftSection({
         </ButtonOpen>
       ) : (
         <>
-          <NavbarLogo />
-          <NavbarMenuItem text="Рабочие пространства" assignment="work" />
-          <NavbarMenuItem text="Недавние" assignment="recent">
-            <NavbarSubmenuItem />
-            <NavbarSubmenuItem />
-          </NavbarMenuItem>
-          <NavbarMenuItem text="В избранном" assignment="favorite" />
-          <NavbarMenuItem text="Шаблоны" assignment="favorite">
-            <NavbarSubmenuTemplates />
-          </NavbarMenuItem>
+          <Logo />
+          <MenuItem text="Рабочие пространства" assignment="work" />
+          <MenuItem text="Недавние" assignment="recent">
+            <SubmenuItem />
+            <SubmenuItem />
+          </MenuItem>
+          <MenuItem text="В избранном" assignment="favorite" />
+          <MenuItem text="Шаблоны" assignment="favorite">
+            <SubmenuTemplates />
+          </MenuItem>
           <ButtonCreate aria-label="create border">Создать</ButtonCreate>
         </>
       )}
