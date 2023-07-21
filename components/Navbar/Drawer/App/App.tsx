@@ -28,12 +28,22 @@ import { styled } from "@mui/material/styles";
 
 // Drawer Styles Mui
 const DrawerHeader = styled("div")(({ theme }) => ({
+  ...theme.mixins.toolbar,
   display: "flex",
+  justifyContent: "flex-end",
   alignItems: "center",
   padding: theme.spacing(0, 2),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: "flex-end",
+  "@media (min-width: 200px)": {
+    minHeight: "49px",
+  },
+}));
+
+const CustomListItemIcon = styled(ListItemIcon)(() => ({
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "inherit",
 }));
 
 const drawerWidth = 75;
@@ -68,13 +78,7 @@ export default function NavbarDrawer({
       anchor="right"
       open={open}
     >
-      <DrawerHeader
-        sx={{
-          "@media (min-width: 200px)": {
-            minHeight: "49px",
-          },
-        }}
-      >
+      <DrawerHeader>
         <IconButton onClick={() => drawerOpen(open)} color="inherit">
           {theme.direction === "rtl" ? (
             <ChevronLeftIcon sx={{ p: 0 }} />
@@ -88,15 +92,7 @@ export default function NavbarDrawer({
         {["Chat"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton sx={{ justifyContent: "center" }}>
-              <ListItemIcon
-                sx={{
-                  justifyContent: "center",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  color: "inherit",
-                }}
-              >
+              <CustomListItemIcon>
                 {index % 2 === 0 ? <ChatIcon /> : <MailIcon />}
                 <Typography
                   sx={{
@@ -108,7 +104,7 @@ export default function NavbarDrawer({
                 >
                   {text}
                 </Typography>
-              </ListItemIcon>
+              </CustomListItemIcon>
             </ListItemButton>
           </ListItem>
         ))}
@@ -122,47 +118,27 @@ export default function NavbarDrawer({
       >
         <ListItem disablePadding>
           <ListItemButton
-            sx={{
-              justifyContent: "center",
-            }}
+            sx={{ justifyContent: "center" }}
             onClick={() => setMode(!mode)}
             color="inherit"
           >
-            <ListItemIcon
-              sx={{
-                justifyContent: "center",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                color: "inherit",
-              }}
-            >
+            <CustomListItemIcon>
               {theme.palette.mode === "dark" ? (
                 <>
                   <Brightness4Icon />
-                  <Typography
-                    sx={{
-                      textAlign: "center",
-                      fontSize: 10,
-                    }}
-                  >
+                  <Typography sx={{ textAlign: "center", fontSize: 10 }}>
                     Dark
                   </Typography>
                 </>
               ) : (
                 <>
                   <Brightness7Icon />
-                  <Typography
-                    sx={{
-                      textAlign: "center",
-                      fontSize: 10,
-                    }}
-                  >
+                  <Typography sx={{ textAlign: "center", fontSize: 10 }}>
                     White
                   </Typography>
                 </>
               )}
-            </ListItemIcon>
+            </CustomListItemIcon>
           </ListItemButton>
         </ListItem>
       </List>

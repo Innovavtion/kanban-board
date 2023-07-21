@@ -19,6 +19,17 @@ const MenuCustom = styled(Menu)(({ theme }) => ({
   },
 }));
 
+const ListCustom = styled(List)(() => ({
+  width: "100%",
+  minWidth: 305,
+  maxWidth: 305,
+  cursor: "pointer",
+  py: 0.1,
+  "@media (max-width: 320px)": {
+    minWidth: 200,
+  },
+}));
+
 export default function NavbarMenuItem({ children, assignment, text }: Props) {
   // Open Menu
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -82,24 +93,13 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
         transformOrigin={{ horizontal: "center", vertical: "top" }}
         anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
       >
-        <List
-          sx={{
-            width: "100%",
-            minWidth: 305,
-            maxWidth: 305,
-            cursor: "pointer",
-            py: 0.1,
-            "@media (max-width: 320px)": {
-              minWidth: 200,
-            },
-          }}
-        >
+        <ListCustom>
           {children?.toString.length != null ? (
             children
           ) : (
             <NavbarSubmenuSubstrate assignment={assignment} />
           )}
-        </List>
+        </ListCustom>
       </MenuCustom>
     </>
   );

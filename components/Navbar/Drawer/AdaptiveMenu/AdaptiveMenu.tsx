@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 
 // Custom Components
-import NavbarLogo from "../../Elements/Logo";
-import NavbarMenuItem from "../../Elements/MenuItem";
-import NavbarSubmenuItem from "../../Submenu/SubmenuItem";
-import NavbarSubmenuTemplates from "../../Submenu/SubmenuTemplates";
+import Logo from "../../Elements/Logo";
+import MenuItem from "../../Elements/MenuItem";
+import SubmenuItem from "../../Submenu/SubmenuItem";
+import SubmenuTemplates from "../../Submenu/SubmenuTemplates";
 
 // Components Mui
 import { Drawer, IconButton, Divider, Button, Box } from "@mui/material";
@@ -83,7 +83,7 @@ export default function NavbarDrawerAdaptiveMenu({
           justifyContent: "space-between",
         }}
       >
-        <NavbarLogo />
+        <Logo />
         <IconButton
           onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
           color="inherit"
@@ -105,15 +105,15 @@ export default function NavbarDrawerAdaptiveMenu({
           height: "275px",
         }}
       >
-        <NavbarMenuItem text="Рабочие пространства" assignment="work" />
-        <NavbarMenuItem text="Недавние" assignment="recent">
-          <NavbarSubmenuItem />
-          <NavbarSubmenuItem />
-        </NavbarMenuItem>
-        <NavbarMenuItem text="В избранном" assignment="favorite" />
-        <NavbarMenuItem text="Шаблоны" assignment="favorite">
-          <NavbarSubmenuTemplates />
-        </NavbarMenuItem>
+        <MenuItem text="Рабочие пространства" assignment="work" />
+        <MenuItem text="Недавние" assignment="recent">
+          <SubmenuItem />
+          <SubmenuItem />
+        </MenuItem>
+        <MenuItem text="В избранном" assignment="favorite" />
+        <MenuItem text="Шаблоны" assignment="favorite">
+          <SubmenuTemplates />
+        </MenuItem>
         <Button
           aria-label="create border"
           sx={{
