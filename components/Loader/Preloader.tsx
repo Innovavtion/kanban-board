@@ -23,7 +23,6 @@ export default function Preloader({ loader }: Props) {
       open={loader}
     >
       <CircularProgress color="inherit" />
-      <Typography sx={{ mt: 3, fontWeight: "500" }}>Loading</Typography>
     </Backdrop>
   );
 }
