@@ -16,11 +16,6 @@ export default function RootLayout({
 }) {
   const [mode, setMode] = useState<boolean>(false);
 
-  const [loader, setLoader] = useState<boolean>(true);
-  useEffect(() => {
-    setInterval(() => setLoader(false), 1500);
-  });
-
   const theme = createTheme({
     palette: {
       mode: mode ? "light" : "dark",
@@ -30,17 +25,14 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        {loader ? (
-          <Preloader loader={loader} />
-        ) : (
-          <>
-            <ThemeProvider theme={theme}>
-              <CssBaseline />
-              <Navbar mode={mode} setMode={setMode} />
-              {children}
-            </ThemeProvider>
-          </>
-        )}
+        <>
+          <Preloader />
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Navbar mode={mode} setMode={setMode} />
+            {children}
+          </ThemeProvider>
+        </>
       </body>
     </html>
   );
