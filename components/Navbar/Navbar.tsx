@@ -22,15 +22,17 @@ const CustomToolbar = styled(Toolbar)(() => ({
 type Props = {
   mode: boolean;
   setMode: (mode: boolean) => void;
+  size: number;
 };
 
-export default function Navbar({ mode, setMode }: Props) {
+export default function Navbar({ mode, setMode, size }: Props) {
   const { open, drawerOpen } = useApp();
   const { openAdaptiveMenu, drawerOpenAdaptiveMenu } = useAdaptiveMenu();
-  const { navbarRef, size } = useNavbar();
+
+  console.log(size);
 
   return (
-    <Box sx={{ flexGrow: 1 }} ref={navbarRef}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={{ height: 50, boxShadow: 0 }} position="static">
         <CustomToolbar sx={{ mt: -0.85 }}>
           <LeftSection

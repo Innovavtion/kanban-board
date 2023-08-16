@@ -1,13 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 
 export function useNavbar() {
-  // Adaptive navbar
-  const navbarRef = useRef<HTMLElement>(null);
-  const [size, setSize] = useState<object>({});
+  const [size, setSize] = useState<number>(0);
 
   const resizeHandler = () => {
-    const { clientHeight, clientWidth } = navbarRef.current || {};
-    setSize({ clientHeight, clientWidth });
+    const clientWidth = document.documentElement.clientWidth;
+    setSize(clientWidth);
   };
 
   useEffect(() => {
@@ -18,5 +16,5 @@ export function useNavbar() {
     };
   }, []);
 
-  return { navbarRef, size };
+  return { size };
 }

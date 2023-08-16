@@ -59,7 +59,7 @@ const ButtonCreate = styled(Button)(() => ({
 type Props = {
   openAdaptiveMenu: boolean;
   drawerOpenAdaptiveMenu: (openAdaptiveMenu: boolean) => void;
-  navbarSize: { clientWidth?: number; clientHeight?: number };
+  navbarSize: number;
 };
 
 export default function NavbarDrawerAdaptiveMenu({
@@ -68,14 +68,9 @@ export default function NavbarDrawerAdaptiveMenu({
   navbarSize,
 }: Props) {
   const theme = useTheme();
-  const drawerWidth: number | undefined = navbarSize.clientWidth;
 
   const removeOpenAdaptiveMenu = () => {
-    if (
-      drawerWidth != undefined &&
-      drawerWidth > 1100 &&
-      openAdaptiveMenu === true
-    ) {
+    if (navbarSize > 1100 && openAdaptiveMenu === true) {
       drawerOpenAdaptiveMenu(openAdaptiveMenu);
     }
   };
@@ -87,9 +82,9 @@ export default function NavbarDrawerAdaptiveMenu({
   return (
     <DrawerCustom
       sx={{
-        width: drawerWidth,
+        width: navbarSize,
         "& .MuiDrawer-paper": {
-          width: drawerWidth,
+          width: navbarSize,
         },
       }}
       variant="persistent"

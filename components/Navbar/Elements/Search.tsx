@@ -67,11 +67,11 @@ const StyledInputModals = styled(InputBase)(({ theme }) => ({
 }));
 
 type Props = {
-  navbarSize: { clientWidth?: number; clientHeight?: number };
+  navbarSize: number;
 };
 
 export default function NavbarSearch({ navbarSize }: Props) {
-  const drawerWidth = navbarSize.clientWidth;
+  const drawerWidth = navbarSize;
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);

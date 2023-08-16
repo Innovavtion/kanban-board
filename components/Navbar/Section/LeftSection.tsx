@@ -12,7 +12,7 @@ import { styled } from "@mui/material/styles";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 
 type Props = {
-  navbarSize: any;
+  navbarSize: number;
   openAdaptiveMenu: boolean;
   drawerOpenAdaptiveMenu: (openAdaptiveMenu: boolean) => void;
 };
@@ -45,7 +45,7 @@ export default function NavbarLeftSection({
 }: Props) {
   return (
     <Box sx={{ display: "flex" }}>
-      {navbarSize.clientWidth <= 1100 ? (
+      {navbarSize <= 1100 ? (
         <ButtonOpen
           aria-label="create border"
           onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
