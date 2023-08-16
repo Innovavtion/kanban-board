@@ -1,3 +1,5 @@
+"use client";
+
 import Logo from "../Elements/Logo";
 import MenuItem from "../Elements/MenuItem";
 import SubmenuItem from "../Submenu/SubmenuItem";

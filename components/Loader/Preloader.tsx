@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 
 import Backdrop from "@mui/material/Backdrop";
@@ -7,16 +5,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 
 type Props = {
-  loader: boolean;
+  loaderProps: boolean;
 };
 
-export default function Preloader() {
-  const [loader, setLoader] = useState<boolean>(true);
-
-  useEffect(() => {
-    setInterval(() => setLoader(false), 1500);
-  }, []);
-
+export default function Preloader({ loaderProps }: Props) {
   return (
     <Backdrop
       sx={{
@@ -26,7 +18,7 @@ export default function Preloader() {
         color: "#fff",
         zIndex: (theme) => theme.zIndex.drawer + 1,
       }}
-      open={loader}
+      open={loaderProps}
     >
       <CircularProgress color="inherit" />
       <Typography sx={{ mt: 3, fontWeight: "500" }} translate="no">

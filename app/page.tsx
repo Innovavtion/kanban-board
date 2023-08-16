@@ -1,3 +1,5 @@
+"use client";
+
 export const metadata = {
   title: "Kanban",
   description: "Main Kanban-Board",
