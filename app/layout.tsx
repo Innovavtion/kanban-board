@@ -25,14 +25,14 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <>
+        <Suspense fallback={<Preloader />}>
           <Preloader />
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <Navbar mode={mode} setMode={setMode} />
             {children}
           </ThemeProvider>
-        </>
+        </Suspense>
       </body>
     </html>
   );
