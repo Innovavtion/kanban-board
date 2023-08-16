@@ -8,11 +8,6 @@ import { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Navbar from "@/components/Navbar/Navbar";
 
-export const metadata = {
-  title: "Kanban",
-  description: "Generated Kanban-Board",
-};
-
 export default function RootLayout({
   children,
 }: {
