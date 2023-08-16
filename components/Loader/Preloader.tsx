@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
@@ -23,6 +19,9 @@ export default function Preloader({ loader }: Props) {
       open={loader}
     >
       <CircularProgress color="inherit" />
+      <Typography sx={{ mt: 3, fontWeight: "500" }} translate="no">
+        Loading
+      </Typography>
     </Backdrop>
   );
 }

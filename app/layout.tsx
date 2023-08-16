@@ -18,7 +18,7 @@ export default function RootLayout({
 
   const [loader, setLoader] = useState<boolean>(true);
   useEffect(() => {
-    setInterval(() => setLoader(false), 10000);
+    setInterval(() => setLoader(false), 1500);
   });
 
   const theme = createTheme({
