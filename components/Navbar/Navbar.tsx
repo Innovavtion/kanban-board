@@ -29,8 +29,6 @@ export default function Navbar({ mode, setMode, size }: Props) {
   const { open, drawerOpen } = useApp();
   const { openAdaptiveMenu, drawerOpenAdaptiveMenu } = useAdaptiveMenu();
 
-  console.log(size);
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={{ height: 50, boxShadow: 0 }} position="static">

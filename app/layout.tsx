@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useEffect, useState, Suspense, lazy } from "react";
 import Preloader from "../components/Loader/Preloader";
 import { useNavbar } from "../components/Navbar/useNavbar";
+import { usePreloader } from "@/components/Loader/usePreloader";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import Navbar from "@/components/Navbar/Navbar";
@@ -17,15 +18,9 @@ export default function RootLayout({
 }) {
   const [mode, setMode] = useState<boolean>(false);
 
-  const [loader, setLoader] = useState<boolean>(true);
+  const { loader } = usePreloader();
 
   const { size } = useNavbar();
-
-  useEffect(() => {
-    setInterval(() => setLoader(false), 1500);
-  }, []);
-
-  console.log(typeof size, size);
 
   const theme = createTheme({
     palette: {
