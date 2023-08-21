@@ -21,6 +21,9 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   height: "100%",
   padding: theme.spacing(0, 2),
   pointerEvents: "none",
+  "& .MuiSvgIcon-root": {
+    zIndex: 1,
+  },
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -56,7 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const StyledInputModals = styled(InputBase)(({ theme }) => ({
-  backgroundColor: alpha(theme.palette.common.white, 0.2),
+  backgroundColor: alpha(theme.palette.background.default, 1),
   borderRadius: theme.shape.borderRadius,
   width: "100%",
   "& .MuiInputBase-input": {
@@ -64,6 +67,29 @@ const StyledInputModals = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
   },
+}));
+
+const StyledListSearch = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  display: "none",
+  width: "100%",
+  minHeight: "50px",
+  marginTop: "12px",
+  backgroundColor: "rgba(255, 255, 255, 0.09)",
+  color: theme.palette.text.primary,
+  boxShadow: theme.shadows,
+  borderRadius: "4px",
+  paddingTop: "10px",
+}));
+
+const StyledListSearchAdaptive = styled(Box)(({ theme }) => ({
+  width: "100%",
+  minHeight: "50px",
+  marginTop: "7px",
+  backgroundColor: theme.palette.background.default,
+  color: theme.palette.text.primary,
+  borderRadius: "4px",
+  paddingTop: "10px",
 }));
 
 type Props = {
@@ -117,19 +143,7 @@ export default function NavbarSearch({ navbarSize }: Props) {
               onFocus={openSearchBox}
               onBlur={closeSearchBox}
             />
-            <Box
-              ref={searchBoxRef}
-              sx={{
-                position: "absolute",
-                display: "none",
-                width: "100%",
-                minHeight: "50px",
-                mt: "12px",
-                backgroundColor: "rgba(255, 255, 255, 0.09)",
-                borderRadius: "4px",
-                py: "10px",
-              }}
-            >
+            <StyledListSearch ref={searchBoxRef}>
               <Typography
                 sx={{ ml: "16px", fontSize: "10px", fontWeight: "bold" }}
                 variant="overline"
@@ -138,7 +152,7 @@ export default function NavbarSearch({ navbarSize }: Props) {
               </Typography>
               <NavbarSubmenuItem />
               <NavbarSubmenuItem />
-            </Box>
+            </StyledListSearch>
           </Search>
         </>
       ) : (
@@ -147,7 +161,6 @@ export default function NavbarSearch({ navbarSize }: Props) {
             sx={{
               "&:hover": {
                 cursor: "pointer",
-                backgroundColor: "rgba(255, 255, 255, 0.08)",
                 borderRadius: "4px",
               },
             }}
@@ -193,16 +206,7 @@ export default function NavbarSearch({ navbarSize }: Props) {
                   inputProps={{ "aria-label": "search" }}
                 />
               </Search>
-              <Box
-                sx={{
-                  width: "100%",
-                  minHeight: "50px",
-                  mt: "7px",
-                  backgroundColor: "#121212",
-                  borderRadius: "4px",
-                  py: "10px",
-                }}
-              >
+              <StyledListSearchAdaptive>
                 <Typography
                   sx={{ ml: "16px", fontSize: "10px", fontWeight: "bold" }}
                   variant="overline"
@@ -211,7 +215,7 @@ export default function NavbarSearch({ navbarSize }: Props) {
                 </Typography>
                 <NavbarSubmenuItem />
                 <NavbarSubmenuItem />
-              </Box>
+              </StyledListSearchAdaptive>
             </Box>
           </Modal>
         </>
