@@ -77,7 +77,7 @@ const StyledListSearch = styled(Box)(({ theme }) => ({
   marginTop: "12px",
   backgroundColor: "rgba(255, 255, 255, 0.09)",
   color: theme.palette.text.primary,
-  boxShadow: theme.shadows,
+  boxShadow: theme.shadows[7],
   borderRadius: "4px",
   paddingTop: "10px",
 }));

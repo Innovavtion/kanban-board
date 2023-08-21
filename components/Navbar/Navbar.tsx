@@ -2,7 +2,6 @@
 
 import { useApp } from "./Drawer/App/useApp";
 import { useAdaptiveMenu } from "./Drawer/AdaptiveMenu/useAdaptiveMenu";
-import { useNavbar } from "./useNavbar";
 
 import RightSection from "./Section/RightSection";
 import LeftSection from "./Section/LeftSection";
