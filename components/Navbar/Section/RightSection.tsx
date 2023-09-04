@@ -3,6 +3,7 @@ import Search from "../Elements/Search";
 import { Button, Box, Avatar } from "@mui/material";
 
 import AppsIcon from "@mui/icons-material/Apps";
+import AccountMenu from "../Elements/AccountMenu";
 
 type Props = {
   navbarSize: number;
@@ -18,9 +19,7 @@ export default function NavbarRightSection({
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <Search navbarSize={navbarSize} />
-      <Avatar alt="Avatar" sx={{ width: 29, height: 29, marginX: "10px" }}>
-        A
-      </Avatar>
+      <AccountMenu />
       <Button
         color="inherit"
         aria-label="open drawer"
