@@ -1,6 +1,6 @@
 import Search from "../Elements/Search";
 
-import { Button, Box } from "@mui/material";
+import { Button, Box, Avatar } from "@mui/material";
 
 import AppsIcon from "@mui/icons-material/Apps";
 
@@ -16,8 +16,11 @@ export default function NavbarRightSection({
   drawerOpen,
 }: Props) {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
       <Search navbarSize={navbarSize} />
+      <Avatar alt="Avatar" sx={{ width: 29, height: 29, marginX: "10px" }}>
+        A
+      </Avatar>
       <Button
         color="inherit"
         aria-label="open drawer"
