@@ -4,9 +4,9 @@ import "./globals.css";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useEffect, useState, Suspense, lazy } from "react";
-import Preloader from "../components/Loader/Preloader";
+import Preloader from "../components/Loader/Preloader/Preloader";
 import { useNavbar } from "../components/Navbar/useNavbar";
-import { usePreloader } from "@/components/Loader/usePreloader";
+import { usePreloader } from "@/components/Loader/Preloader/usePreloader";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import Navbar from "@/components/Navbar/Navbar";
