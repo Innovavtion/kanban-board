@@ -10,7 +10,6 @@ import SearchIcon from "@mui/icons-material/Search";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  marginLeft: theme.spacing(1),
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -29,30 +28,23 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(0.8, 1, 0.8, 0),
-    // vertical padding + font size from searchIcon
+    padding: theme.spacing(0.75, 1, 0.75, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     borderRadius: theme.shape.borderRadius,
     width: "0",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: alpha(theme.palette.common.white, 0.08),
+      backgroundColor: alpha(theme.palette.text.primary, 0.15),
     },
     "&:focus": {
       cursor: "text",
-      backgroundColor: alpha(theme.palette.common.white, 0.2),
+      backgroundColor: alpha(theme.palette.text.primary, 0.25),
       width: "20ch",
     },
-    // При ширине 900 и меньше, сделать инпут при фокусе меньше
-    [theme.breakpoints.down("md")]: {
+    "@media (max-width: 1136px)": {
       "&:focus": {
-        width: "15ch",
-      },
-    },
-    "@media (max-width: 320px)": {
-      "&:focus": {
-        width: "8.45ch",
+        width: "16.2ch",
       },
     },
   },
