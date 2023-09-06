@@ -54,6 +54,8 @@ const StyledInputModals = styled(InputBase)(({ theme }) => ({
   backgroundColor: alpha(theme.palette.background.default, 1),
   borderRadius: theme.shape.borderRadius,
   width: "100%",
+  border: "1px solid",
+  borderColor: alpha(theme.palette.text.primary, 0.05),
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -81,6 +83,8 @@ const StyledListSearchAdaptive = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   color: theme.palette.text.primary,
   borderRadius: "4px",
+  border: "1px solid",
+  borderColor: alpha(theme.palette.text.primary, 0.05),
   paddingTop: "10px",
 }));
 
