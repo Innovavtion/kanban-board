@@ -17,13 +17,15 @@ type Props = {
   drawerOpenAdaptiveMenu: (openAdaptiveMenu: boolean) => void;
 };
 
-const ButtonOpen = styled(Button)(() => ({
-  color: "inherit",
+const ButtonOpen = styled(Button)(({ theme }) => ({
   minWidth: 5,
   px: "10px",
   py: "6px",
   ml: "5px",
   ":hover": { backgroundColor: "rgba(255, 255, 255, 0.08)" },
+  "& .MuiSvgIcon-root": {
+    color: theme.palette.text.primary,
+  },
 }));
 
 const ButtonCreate = styled(Button)(() => ({

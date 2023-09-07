@@ -9,14 +9,20 @@ import DrawerApp from "./Drawer/AppMenu/App";
 import DrawerAdaptiveMenu from "./Drawer/AdaptiveMenu/AdaptiveMenu";
 
 import { AppBar, Box, Toolbar } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { styled, alpha } from "@mui/material/styles";
 
 const CustomToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
-  minHeight: "64px",
-  paddingX: "24px",
   backgroundColor: theme.palette.background.default,
+  borderBottom: "1px solid",
+  borderColor: alpha(theme.palette.text.primary, 0.1),
+  minHeight: "49.5px",
+  maxHeight: "49.5px",
+  "@media (min-width: 600px)": {
+    minHeight: "49.5px",
+    maxHeight: "49.5px",
+  },
 }));
 
 type Props = {
@@ -31,8 +37,8 @@ export default function Navbar({ mode, setMode, size }: Props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar sx={{ height: 50, boxShadow: 0 }} position="static">
-        <CustomToolbar sx={{ mt: -0.85 }}>
+      <AppBar sx={{ boxShadow: 0, backgroundImage: "none" }} position="static">
+        <CustomToolbar>
           <LeftSection
             navbarSize={size}
             openAdaptiveMenu={openAdaptiveMenu}
