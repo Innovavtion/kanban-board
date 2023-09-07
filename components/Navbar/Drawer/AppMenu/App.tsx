@@ -44,8 +44,11 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
   alignItems: "center",
   padding: theme.spacing(0, 2),
+  minHeight: "48.5px",
+  maxHeight: "48.5px",
   "@media (min-width: 200px)": {
-    minHeight: "49px",
+    minHeight: "48.5px",
+    maxHeight: "48.5px",
   },
 }));
 
