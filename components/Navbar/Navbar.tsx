@@ -11,11 +11,12 @@ import DrawerAdaptiveMenu from "./Drawer/AdaptiveMenu/AdaptiveMenu";
 import { AppBar, Box, Toolbar } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const CustomToolbar = styled(Toolbar)(() => ({
+const CustomToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   minHeight: "64px",
   paddingX: "24px",
+  backgroundColor: theme.palette.background.default,
 }));
 
 type Props = {

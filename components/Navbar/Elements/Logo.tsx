@@ -1,5 +1,17 @@
 import { Typography, Button } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import IconViewKanban from "@mui/icons-material/ViewKanban";
+
+const IconCustom = styled(IconViewKanban)(({ theme }) => ({
+  marginRight: "4px",
+  color: theme.palette.text.primary,
+}));
+
+const TypographyCustom = styled(Typography)(({ theme }) => ({
+  marginTop: "2.4px",
+  fontWeight: 700,
+  color: theme.palette.text.primary,
+}));
 
 export default function NavbarLogo() {
   return (
@@ -8,8 +20,8 @@ export default function NavbarLogo() {
       color="inherit"
       sx={{ ml: 0, fontWeight: 700, py: 0.59 }}
     >
-      <IconViewKanban sx={{ mr: 0.5 }} />
-      <Typography sx={{ mt: 0.3, fontWeight: 700 }}>Kanban</Typography>
+      <IconCustom />
+      <TypographyCustom>Kanban</TypographyCustom>
     </Button>
   );
 }

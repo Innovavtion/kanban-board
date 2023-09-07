@@ -1,9 +1,14 @@
 import Search from "../Elements/Search";
 
-import { Button, Box, Avatar } from "@mui/material";
+import { Button, Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 import AppsIcon from "@mui/icons-material/Apps";
 import AccountMenu from "../Elements/AccountMenu";
+
+const AppsCustomIcon = styled(AppsIcon)(({ theme }) => ({
+  color: theme.palette.text.primary,
+}));
 
 type Props = {
   navbarSize: number;
@@ -26,7 +31,7 @@ export default function NavbarRightSection({
         onClick={() => drawerOpen(open)}
         sx={{ minWidth: 5, px: "14px" }}
       >
-        <AppsIcon />
+        <AppsCustomIcon />
       </Button>
     </Box>
   );

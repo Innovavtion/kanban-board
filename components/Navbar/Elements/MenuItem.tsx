@@ -31,6 +31,18 @@ const ListCustom = styled(List)(() => ({
   },
 }));
 
+const TypographyCustom = styled(Typography)(({ theme }) => ({
+  fontWeight: 300,
+  fontSize: 14,
+  textTransform: "none",
+  color: theme.palette.text.primary,
+}));
+
+const ExpandMoreCustomIcon = styled(ExpandMoreIcon)(({ theme }) => ({
+  color: theme.palette.text.primary,
+  "@media (max-width: 1100px)": { display: "none" },
+}));
+
 export default function NavbarMenuItem({ children, assignment, text }: Props) {
   // Open Menu
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -51,18 +63,8 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
         sx={{ ml: 0, fontWeight: 700, py: 0.59 }}
         onClick={handleClick}
       >
-        <Typography
-          sx={{
-            fontWeight: 300,
-            fontSize: 14,
-            textTransform: "none",
-          }}
-        >
-          {text}
-        </Typography>
-        <ExpandMoreIcon
-          sx={{ "@media (max-width: 1100px)": { display: "none" } }}
-        />
+        <TypographyCustom>{text}</TypographyCustom>
+        <ExpandMoreCustomIcon />
       </Button>
       <MenuCustom
         id="basic-menu"

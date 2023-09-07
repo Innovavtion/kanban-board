@@ -20,13 +20,14 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   height: "100%",
   padding: theme.spacing(0, 2),
   pointerEvents: "none",
+  color: theme.palette.text.primary,
   "& .MuiSvgIcon-root": {
     zIndex: 1,
   },
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
+  color: theme.palette.text.primary,
   "& .MuiInputBase-input": {
     padding: theme.spacing(0.75, 1, 0.75, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
