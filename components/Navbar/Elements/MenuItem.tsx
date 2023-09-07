@@ -26,7 +26,8 @@ const ListCustom = styled(List)(() => ({
   cursor: "pointer",
   py: 0.1,
   "@media (max-width: 320px)": {
-    minWidth: 200,
+    minWidth: 250,
+    maxWidth: 250,
   },
 }));
 
@@ -79,7 +80,7 @@ export default function NavbarMenuItem({ children, assignment, text }: Props) {
               position: "absolute",
               top: 0,
               right: 14,
-              width: 10,
+              minWidth: "300px",
               height: 10,
               bgcolor: "background.paper",
               transform: "translateY(-50%) rotate(45deg)",
