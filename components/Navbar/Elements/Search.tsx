@@ -36,12 +36,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: "0",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: alpha(theme.palette.text.primary, 0.15),
+      backgroundColor: alpha(theme.palette.text.primary, 0.05),
     },
     "&:focus": {
       cursor: "text",
-      backgroundColor: alpha(theme.palette.text.primary, 0.25),
+      backgroundColor: alpha(theme.palette.text.primary, 0.15),
       width: "20ch",
+      border: "0.5px solid",
+      borderColor: alpha(theme.palette.text.primary, 0.15),
     },
     "@media (max-width: 1136px)": {
       "&:focus": {

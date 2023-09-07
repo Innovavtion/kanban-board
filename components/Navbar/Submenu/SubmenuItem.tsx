@@ -14,7 +14,7 @@ import ImageIcon from "@mui/icons-material/Image";
 const ListItemCustom = styled(ListItem)(({ theme }) => ({
   "&:hover": {
     cursor: "pointer",
-    backgroundColor: alpha(theme.palette.common.black, 0.15),
+    backgroundColor: alpha(theme.palette.text.primary, 0.05),
   },
   "& .MuiListItemText-root": {
     marginTop: "3px",

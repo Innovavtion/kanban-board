@@ -12,6 +12,17 @@ import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 
+import { styled, alpha } from "@mui/material/styles";
+
+const MenuCustom = styled(Menu)(({ theme }) => ({
+  ".MuiList-root": {
+    elevation: 4,
+    "& .MuiMenuItem-root:hover": {
+      backgroundColor: alpha(theme.palette.text.primary, 0.05),
+    },
+  },
+}));
+
 export default function AccountMenu() {
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorElement);
@@ -40,14 +51,13 @@ export default function AccountMenu() {
           </Avatar>
         </IconButton>
       </Tooltip>
-      <Menu
+      <MenuCustom
         anchorEl={anchorElement}
         id="account-menu"
         open={open}
         onClose={menuClose}
         onClick={menuClose}
         PaperProps={{
-          elevation: 0,
           sx: {
             overflow: "visible",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
@@ -57,18 +67,6 @@ export default function AccountMenu() {
               height: 32,
               ml: -0.5,
               mr: 1,
-            },
-            "&:before": {
-              content: '""',
-              display: "block",
-              position: "absolute",
-              top: 0,
-              right: 14,
-              width: 10,
-              height: 10,
-              bgcolor: "background.paper",
-              transform: "translateY(-50%) rotate(45deg)",
-              zIndex: 0,
             },
           },
         }}
@@ -100,7 +98,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           Logout
         </MenuItem>
-      </Menu>
+      </MenuCustom>
     </>
   );
 }
