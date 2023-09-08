@@ -19,7 +19,7 @@ const ContainerBoardItem = styled(Box)(({ theme }) => ({
   width: "220px",
   height: "125px",
   borderRadius: "10px",
-  backgroundColor: alpha(theme.palette.text.primary, 0.15),
+  backgroundColor: alpha(theme.palette.text.primary, 0.3),
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   padding: "10px",

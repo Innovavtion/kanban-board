@@ -1,3 +1,4 @@
+import BoardCreate from "@/components/Boards/BoardCreate";
 import BoardItem from "@/components/Boards/BoardItem";
 
 export const metadata = {
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <BoardItem text="Какой-то проект" />
       <BoardItem text="Длинное название проекта очень длинное dgdfgdfg dfgdf dfgdfg" />
+      <BoardCreate text="Создать доску" />
     </>
   );
 }
