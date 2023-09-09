@@ -1,5 +1,6 @@
 import BoardCreate from "@/components/Boards/BoardCreate";
 import BoardItem from "@/components/Boards/BoardItem";
+import BoardsRecently from "@/components/Boards/BoardsRecently";
 
 export const metadata = {
   title: "Kanban",
@@ -9,9 +10,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <BoardItem text="Какой-то проект" />
-      <BoardItem text="Длинное название проекта очень длинное dgdfgdfg dfgdf dfgdfg" />
-      <BoardCreate text="Создать доску" />
+      <BoardsRecently />
     </>
   );
 }

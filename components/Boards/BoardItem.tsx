@@ -16,13 +16,15 @@ to {
 
 const ContainerBoardItem = styled(Box)(({ theme }) => ({
   position: "relative",
-  width: "220px",
-  height: "125px",
+  minWidth: "155px",
+  width: "22.5%",
+  height: "105px",
   borderRadius: "10px",
   backgroundColor: alpha(theme.palette.text.primary, 0.3),
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   padding: "10px",
+  margin: "0 10px 10px 0",
   cursor: "pointer",
   boxShadow: theme.shadows[3],
   "&:hover::before": {
@@ -43,8 +45,8 @@ const NameBoard = styled(Typography)(({ theme }) => ({
   color: "white",
   display: "-webkit-box",
   position: "absolute",
-  width: "91%",
-  height: "35%",
+  width: "88%",
+  height: "50%",
   wordWrap: "break-word",
   overflow: "hidden",
   WebkitLineClamp: 2,
