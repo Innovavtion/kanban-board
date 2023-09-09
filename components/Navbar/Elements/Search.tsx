@@ -72,11 +72,13 @@ const StyledListSearch = styled(Box)(({ theme }) => ({
   width: "100%",
   minHeight: "50px",
   marginTop: "12px",
-  backgroundColor: "rgba(255, 255, 255, 0.09)",
+  backgroundColor: theme.palette.background.paper,
   color: theme.palette.text.primary,
   boxShadow: theme.shadows[7],
   borderRadius: "4px",
   paddingTop: "10px",
+  backgroundImage:
+    "linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12))",
 }));
 
 const StyledListSearchAdaptive = styled(Box)(({ theme }) => ({

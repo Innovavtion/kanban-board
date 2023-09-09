@@ -28,7 +28,6 @@ const BoxBoardsRecently = styled(Box)(() => ({
   flexWrap: "wrap",
   justifyContent: "flex-start",
   width: "100%",
-  backgroundColor: "white",
   ".BoardBox:nth-of-type(4n)": {
     marginRight: 0,
   },

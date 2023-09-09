@@ -16,7 +16,6 @@ import { styled, alpha } from "@mui/material/styles";
 
 const MenuCustom = styled(Menu)(({ theme }) => ({
   ".MuiList-root": {
-    elevation: 4,
     "& .MuiMenuItem-root:hover": {
       backgroundColor: alpha(theme.palette.text.primary, 0.05),
     },
