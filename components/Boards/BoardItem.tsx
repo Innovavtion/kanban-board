@@ -17,16 +17,28 @@ to {
 const ContainerBoardItem = styled(Box)(({ theme }) => ({
   position: "relative",
   minWidth: "155px",
-  width: "22.5%",
-  height: "105px",
+  width: "23.5%",
+  height: "115px",
   borderRadius: "10px",
   backgroundColor: alpha(theme.palette.text.primary, 0.3),
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   padding: "10px",
-  margin: "0 10px 10px 0",
+  margin: "0 2% 10px 0",
   cursor: "pointer",
   boxShadow: theme.shadows[3],
+  "@media (max-width: 1100px)": {
+    height: "180px",
+    width: "calc(50% - 15px)",
+  },
+  "@media (max-width: 535px)": {
+    margin: "0 0 10px 0",
+    height: "170px",
+    width: "98%",
+  },
+  "@media (max-width: 300px)": {
+    height: "155px",
+  },
   "&:hover::before": {
     content: "''",
     position: "absolute",
@@ -46,7 +58,7 @@ const NameBoard = styled(Typography)(({ theme }) => ({
   display: "-webkit-box",
   position: "absolute",
   width: "88%",
-  height: "50%",
+  height: "46%",
   wordWrap: "break-word",
   overflow: "hidden",
   WebkitLineClamp: 2,
@@ -55,6 +67,9 @@ const NameBoard = styled(Typography)(({ theme }) => ({
   zIndex: 2,
   fontSize: "16px",
   fontWeight: "700",
+  "@media (max-width: 588px)": {
+    height: "27.5%",
+  },
 }));
 
 const RatingCustom = styled(Rating)(() => ({
@@ -78,6 +93,7 @@ export default function BoardItem({ text }: Props) {
         backgroundImage:
           "url(https://images.unsplash.com/photo-1652874131919-2b85d7dbc2c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80)",
       }}
+      className="BoardBox"
     >
       <NameBoard>{text}</NameBoard>
       <RatingCustom

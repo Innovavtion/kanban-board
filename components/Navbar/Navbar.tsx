@@ -36,7 +36,7 @@ export default function Navbar({ mode, setMode, size }: Props) {
   const { openAdaptiveMenu, drawerOpenAdaptiveMenu } = useAdaptiveMenu();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, top: 0, position: "sticky", zIndex: 10 }}>
       <AppBar sx={{ boxShadow: 0, backgroundImage: "none" }} position="static">
         <CustomToolbar>
           <LeftSection

@@ -10,8 +10,11 @@ import { styled } from "@mui/material/styles";
 
 const BoxRecently = styled(Box)(() => ({
   width: "85%",
+  margin: "0 auto",
   marginTop: "20px",
-  maxWidth: "835px",
+  maxWidth: "825px",
+  minWidth: "200px",
+  overflowY: "auto",
 }));
 
 const BoxTitleRecently = styled(Box)(() => ({
@@ -24,9 +27,19 @@ const BoxBoardsRecently = styled(Box)(() => ({
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "flex-start",
-  minWidth: "200px",
   width: "100%",
   backgroundColor: "white",
+  ".BoardBox:nth-of-type(4n)": {
+    marginRight: 0,
+  },
+  "@media (max-width: 1100px)": {
+    ".BoardBox:nth-of-type(2n)": {
+      marginRight: 0,
+    },
+  },
+  "@media (max-width: 650px)": {
+    justifyContent: "center",
+  },
 }));
 
 const TypographyBoardsRecently = styled(Typography)(() => ({
