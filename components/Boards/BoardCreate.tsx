@@ -5,23 +5,40 @@ import { styled, alpha } from "@mui/material/styles";
 
 const ContainerBoardCreate = styled(Box)(({ theme }) => ({
   display: "inline-block",
-  width: "220px",
-  height: "125px",
+  minWidth: "155px",
+  width: "23.5%",
+  height: "115px",
   padding: "10px",
   backgroundColor: alpha(theme.palette.text.primary, 0.3),
   borderRadius: "10px",
   boxShadow: theme.shadows[3],
+  cursor: "pointer",
   "&:hover": {
-    cursor: "pointer",
     backgroundColor: alpha(theme.palette.text.primary, 0.35),
     transitionDuration: "0.4s",
     transitionProperty: "background-color",
   },
+  "@media (max-width: 1100px)": {
+    height: "180px",
+    width: "calc(50% - 10px)",
+  },
+  "@media (max-width: 535px)": {
+    margin: "0 7px 10px 0",
+    height: "150px",
+    width: "calc(50% - 4px)",
+  },
+  "@media (max-width: 400px)": {
+    margin: "0 0 10px 0",
+    height: "155px",
+    width: "100%",
+  },
 }));
 
 const TextBoardCreate = styled(Typography)(({ theme }) => ({
-  lineHeight: "105px",
-  textAlign: "center",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  height: "100%",
   fontSize: "16.5px",
   fontWeight: "500",
   color: alpha(theme.palette.text.primary, 0.75),
@@ -33,7 +50,7 @@ type Props = {
 
 export default function BoardCreate({ text }: Props) {
   return (
-    <ContainerBoardCreate>
+    <ContainerBoardCreate className="BoardBox">
       <TextBoardCreate>{text}</TextBoardCreate>
     </ContainerBoardCreate>
   );

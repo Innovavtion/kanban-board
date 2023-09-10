@@ -23,21 +23,23 @@ const ContainerBoardItem = styled(Box)(({ theme }) => ({
   backgroundColor: alpha(theme.palette.text.primary, 0.3),
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  padding: "10px",
-  margin: "0 2% 10px 0",
+  padding: "10px 12.5px",
+  margin: "0 2% 15px 0",
   cursor: "pointer",
   boxShadow: theme.shadows[3],
   "@media (max-width: 1100px)": {
-    height: "180px",
-    width: "calc(50% - 15px)",
+    height: "175px",
+    width: "calc(50% - 10px)",
   },
   "@media (max-width: 535px)": {
-    margin: "0 0 10px 0",
-    height: "170px",
-    width: "98%",
+    margin: "0 7px 10px 0",
+    height: "150px",
+    width: "calc(50% - 4px)",
   },
-  "@media (max-width: 300px)": {
+  "@media (max-width: 400px)": {
+    margin: "0 0 10px 0",
     height: "155px",
+    width: "100%",
   },
   "&:hover::before": {
     content: "''",

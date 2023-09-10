@@ -4,15 +4,13 @@ import BoardItem from "./BoardItem";
 
 import { Box, Typography } from "@mui/material";
 
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-
 import { styled } from "@mui/material/styles";
+import BoardCreate from "./BoardCreate";
 
 const BoxRecently = styled(Box)(() => ({
   width: "85%",
   margin: "0 auto",
   marginTop: "20px",
-  paddingBottom: "30px",
   maxWidth: "755px",
   minWidth: "200px",
   overflowY: "auto",
@@ -21,6 +19,9 @@ const BoxRecently = styled(Box)(() => ({
 const BoxTitleRecently = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
+  textTransform: "uppercase",
+  fontSize: "16px",
+  fontWeight: "700",
   paddingBottom: "15px",
 }));
 
@@ -48,20 +49,23 @@ const TypographyBoardsRecently = styled(Typography)(() => ({
   marginTop: "3px",
 }));
 
-export default function BoardsRecently() {
+export default function BoardsWorkSpace() {
   return (
     <BoxRecently>
       <BoxTitleRecently>
-        <AccessTimeIcon sx={{ marginRight: "10px", fontSize: 27 }} />
         <TypographyBoardsRecently>
-          Недавно просмотренное
+          Ваши рабочие пространства
         </TypographyBoardsRecently>
       </BoxTitleRecently>
       <BoxBoardsRecently>
         <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
         <BoardItem text="Название доски" />
+        <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
         <BoardItem text="Название доски" />
+        <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
         <BoardItem text="Название доски" />
+        <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
+        <BoardCreate text="Создать доску" />
       </BoxBoardsRecently>
     </BoxRecently>
   );
