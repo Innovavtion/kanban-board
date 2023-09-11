@@ -17,6 +17,13 @@ const BoxBoardOption = styled(Box)(({ theme }) => ({
     transitionDuration: "0.4s",
     transitionProperty: "background-color",
   },
+  "@media (max-width: 904px)": {
+    width: "calc(25% - 5px)",
+  },
+  "@media (max-width: 800px)": {
+    marginTop: "5px",
+    width: "calc(50% - 5px)",
+  },
 }));
 
 const IconCustom = styled(Box)(() => ({
@@ -30,6 +37,14 @@ const IconCustom = styled(Box)(() => ({
 
 const TypographyCustom = styled(Typography)(() => ({
   marginTop: "1.8px",
+  "@media (max-width: 420px)": {
+    fontWeight: "700",
+    fontSize: "11px",
+  },
+  "@media (max-width: 320px)": {
+    fontWeight: "700",
+    fontSize: "9.5px",
+  },
 }));
 
 type Props = {

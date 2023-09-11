@@ -39,24 +39,33 @@ const TypographyTitle = styled(Typography)(() => ({
 
 const BoxMangmentWorkSpace = styled(Box)(() => ({
   display: "flex",
+  flexWrap: "wrap",
   alignItems: "center",
   fontWeight: "700",
   paddingBottom: "18px",
 }));
 
 const TypographyMangmentWorkSpace = styled(Box)(() => ({
-  maxWidth: "250px",
+  width: "22.5%",
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
+  marginRight: "7px",
+  "@media (max-width: 904px)": {
+    width: "75%",
+  },
 }));
 
 const BoxSetting = styled(Box)(() => ({
   display: "flex",
   justifyContent: "space-between",
-  width: "100%",
+  width: "71%",
   height: "100%",
-  marginLeft: "7px",
+  flexWrap: "wrap",
+  "@media (max-width: 904px)": {
+    marginTop: "5px",
+    width: "100%",
+  },
 }));
 
 const BoxBoards = styled(Box)(() => ({

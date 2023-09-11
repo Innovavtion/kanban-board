@@ -29,7 +29,7 @@ const ContainerBoardItem = styled(Box)(({ theme }) => ({
   boxShadow: theme.shadows[3],
   "@media (max-width: 1100px)": {
     height: "175px",
-    width: "calc(50% - 10px)",
+    width: "calc(50% - 8px)",
   },
   "@media (max-width: 535px)": {
     margin: "0 7px 10px 0",
