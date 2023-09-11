@@ -9,7 +9,7 @@ const ContainerBoardCreate = styled(Box)(({ theme }) => ({
   width: "23.5%",
   height: "115px",
   padding: "10px",
-  backgroundColor: alpha(theme.palette.text.primary, 0.3),
+  backgroundColor: alpha(theme.palette.text.primary, 0.2),
   borderRadius: "10px",
   boxShadow: theme.shadows[3],
   cursor: "pointer",
@@ -19,7 +19,7 @@ const ContainerBoardCreate = styled(Box)(({ theme }) => ({
     transitionProperty: "background-color",
   },
   "@media (max-width: 1100px)": {
-    height: "180px",
+    height: "175px",
     width: "calc(50% - 10px)",
   },
   "@media (max-width: 535px)": {
