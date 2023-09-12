@@ -14,12 +14,15 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 
 const BoxWorkSpace = styled(Box)(() => ({
-  width: "85%",
+  width: "100%",
   margin: "0 auto",
   marginTop: "20px",
   maxWidth: "755px",
   minWidth: "200px",
   overflowY: "auto",
+  "@media (max-width: 905px)": {
+    width: "85%",
+  },
 }));
 
 const BoxTitle = styled(Box)(() => ({
@@ -111,10 +114,6 @@ export default function BoardsWorkSpace() {
         </BoxSetting>
       </BoxMangmentWorkSpace>
       <BoxBoards>
-        <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
-        <BoardItem text="Название доски" />
-        <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
-        <BoardItem text="Название доски" />
         <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
         <BoardItem text="Название доски" />
         <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />

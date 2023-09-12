@@ -54,7 +54,7 @@ type Props = {
 
 export default function BoardOption({ text, iconSvg }: Props) {
   return (
-    <BoxBoardOption>
+    <BoxBoardOption className="ButtonOption">
       <IconCustom>{iconSvg}</IconCustom>
       <TypographyCustom>{text}</TypographyCustom>
     </BoxBoardOption>

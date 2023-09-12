@@ -1,7 +1,4 @@
-import BoardCreate from "@/components/Boards/BoardCreate";
-import BoardItem from "@/components/Boards/BoardItem";
-import BoardsRecently from "@/components/Boards/BoardsRecently";
-import BoardsWorkSpace from "@/components/Boards/BoardsWorkSpace";
+import HomeContent from "@/components/Boards/HomeContent";
 
 export const metadata = {
   title: "Kanban",
@@ -9,10 +6,5 @@ export const metadata = {
 };
 
 export default function Home() {
-  return (
-    <>
-      <BoardsRecently />
-      <BoardsWorkSpace />
-    </>
-  );
+  return <HomeContent />;
 }

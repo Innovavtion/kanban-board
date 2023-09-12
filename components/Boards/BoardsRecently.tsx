@@ -9,13 +9,15 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { styled } from "@mui/material/styles";
 
 const BoxRecently = styled(Box)(() => ({
-  width: "85%",
+  width: "100%",
   margin: "0 auto",
-  marginTop: "20px",
   paddingBottom: "30px",
   maxWidth: "755px",
   minWidth: "200px",
   overflowY: "auto",
+  "@media (max-width: 905px)": {
+    width: "85%",
+  },
 }));
 
 const BoxTitleRecently = styled(Box)(() => ({
