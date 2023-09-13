@@ -1,9 +1,7 @@
-"use client";
-
 import BoardItem from "./BoardItem";
 import BoardOption from "./BoardOption";
 
-import { Box, Typography, Avatar } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
 import BoardCreate from "./BoardCreate";
@@ -13,34 +11,7 @@ import GridViewIcon from "@mui/icons-material/GridView";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-const BoxWorkSpace = styled(Box)(() => ({
-  width: "100%",
-  margin: "0 auto",
-  marginTop: "20px",
-  maxWidth: "755px",
-  minWidth: "200px",
-  overflowY: "auto",
-  "@media (max-width: 905px)": {
-    width: "85%",
-  },
-}));
-
-const BoxTitle = styled(Box)(() => ({
-  display: "flex",
-  alignItems: "center",
-  textTransform: "uppercase",
-  fontSize: "16px",
-  fontWeight: "700",
-  paddingBottom: "15px",
-}));
-
-const TypographyTitle = styled(Typography)(() => ({
-  fontSize: "16px",
-  fontWeight: "700",
-  marginTop: "3px",
-}));
-
-const BoxMangmentWorkSpace = styled(Box)(() => ({
+const BoardWorkSpace = styled(Box)(() => ({
   display: "flex",
   flexWrap: "wrap",
   alignItems: "center",
@@ -91,11 +62,8 @@ const BoxBoards = styled(Box)(() => ({
 
 export default function BoardsWorkSpace() {
   return (
-    <BoxWorkSpace>
-      <BoxTitle>
-        <TypographyTitle>Ваши рабочие пространства</TypographyTitle>
-      </BoxTitle>
-      <BoxMangmentWorkSpace>
+    <Box sx={{ paddingBottom: "27px" }}>
+      <BoardWorkSpace>
         <Avatar
           alt="Avatar"
           sx={{ width: 32, height: 32, marginRight: "10px" }}
@@ -112,13 +80,13 @@ export default function BoardsWorkSpace() {
           <BoardOption text="Участники" iconSvg={<PersonOutlineIcon />} />
           <BoardOption text="Настройки" iconSvg={<SettingsIcon />} />
         </BoxSetting>
-      </BoxMangmentWorkSpace>
+      </BoardWorkSpace>
       <BoxBoards>
         <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
         <BoardItem text="Название доски" />
         <BoardItem text="Название доски sdfsdfsdf dsfsdfsdfsdf sdfsdfs" />
         <BoardCreate text="Создать доску" />
       </BoxBoards>
-    </BoxWorkSpace>
+    </Box>
   );
 }

@@ -20,6 +20,13 @@ const AccordionCustom = styled(Accordion)(({ theme }) => ({
   boxShadow: "none",
   color: alpha(theme.palette.text.primary, 0.75),
   py: 0,
+  ".MuiPaper-elevation": {
+    ":hover": {
+      backgroundColor: alpha(theme.palette.text.primary, 0.1),
+      transitionDuration: "0.4s",
+      transitionProperty: "background-color",
+    },
+  },
   ":before": {
     display: "none",
   },

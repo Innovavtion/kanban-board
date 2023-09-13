@@ -1,11 +1,12 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 import BoardsRecently from "@/components/Boards/BoardsRecently";
-import BoardsWorkSpace from "@/components/Boards/BoardsWorkSpace";
+import BoardsWorkSpace from "./BoardsWorksSpace";
+import BoxWorkSpace from "@/components/Boards/BoxWorkSpace";
 import HomeLeftSidebar from "@/components/Boards/HomeLeftSidebar";
 
 const BoxCustom = styled(Box)(() => ({
@@ -25,8 +26,10 @@ export default function HomeContent() {
       <HomeLeftSidebar />
       <BoxBoards>
         <BoardsRecently />
-        <BoardsWorkSpace />
-        <BoardsWorkSpace />
+        <BoxWorkSpace>
+          <BoardsWorkSpace />
+          <BoardsWorkSpace />
+        </BoxWorkSpace>
       </BoxBoards>
     </BoxCustom>
   );
