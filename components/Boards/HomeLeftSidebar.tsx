@@ -8,6 +8,8 @@ import AccordionWorkSpace from "./AccordionWorkSpace";
 import { styled, alpha } from "@mui/material/styles";
 
 import IconViewKanban from "@mui/icons-material/ViewKanban";
+import CopyAllIcon from "@mui/icons-material/CopyAll";
+import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import AddIcon from "@mui/icons-material/Add";
 
 const BoxCustom = styled(Box)(({ theme }) => ({
@@ -63,8 +65,8 @@ export default function HomeLeftSidebar() {
   return (
     <BoxCustom>
       <BoardOption text="Доски" iconSvg={<IconViewKanban />} />
-      <BoardOption text="Шаблоны" iconSvg={<IconViewKanban />} />
-      <BoardOption text="Главная страница" iconSvg={<IconViewKanban />} />
+      <BoardOption text="Шаблоны" iconSvg={<CopyAllIcon />} />
+      <BoardOption text="Главная страница" iconSvg={<ElectricBoltIcon />} />
       <Divider />
       <Box sx={{ padding: "12px 0" }}>
         <BoxHeaderContent>

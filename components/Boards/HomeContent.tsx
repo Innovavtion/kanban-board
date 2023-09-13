@@ -16,6 +16,9 @@ const BoxCustom = styled(Box)(() => ({
   justifyContent: "center",
   width: "100%",
   marginTop: "50px",
+  "@media (max-width: 1025px)": {
+    marginTop: "20px",
+  },
 }));
 
 const BoxBoards = styled(Box)(() => ({}));

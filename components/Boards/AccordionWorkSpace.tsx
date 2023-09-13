@@ -14,6 +14,9 @@ import { styled, alpha } from "@mui/material/styles";
 
 import IconViewKanban from "@mui/icons-material/ViewKanban";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import GridViewIcon from "@mui/icons-material/GridView";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 const AccordionCustom = styled(Accordion)(({ theme }) => ({
   background: "none",
@@ -99,11 +102,11 @@ export default function AccordionWorkSpace({ text }: Props) {
           <ListItemText primary="Доски" />
         </ListItemCustom>
         <ListItemCustom>
-          <IconViewKanban fontSize="small" sx={{ marginRight: "8px" }} />
+          <GridViewIcon fontSize="small" sx={{ marginRight: "8px" }} />
           <ListItemText primary="Представления" />
         </ListItemCustom>
         <ListItemCustom>
-          <IconViewKanban fontSize="small" sx={{ marginRight: "8px" }} />
+          <SettingsIcon fontSize="small" sx={{ marginRight: "8px" }} />
           <ListItemText primary="Настройки" />
         </ListItemCustom>
       </AccordionDetails>
