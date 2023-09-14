@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState } from "react";
 
 import { Box, Typography, Rating, keyframes } from "@mui/material";
@@ -59,6 +61,8 @@ const NameBoard = styled(Typography)(({ theme }) => ({
   color: "white",
   display: "-webkit-box",
   position: "absolute",
+  top: 10,
+  left: 12,
   width: "88%",
   height: "46%",
   wordWrap: "break-word",
@@ -66,7 +70,7 @@ const NameBoard = styled(Typography)(({ theme }) => ({
   WebkitLineClamp: 2,
   WebkitBoxOrient: "vertical",
   textOverflow: "ellipsis",
-  zIndex: 2,
+  zIndex: 1,
   fontSize: "16px",
   fontWeight: "700",
   "@media (max-width: 588px)": {
@@ -97,7 +101,21 @@ export default function BoardItem({ text }: Props) {
       }}
       className="BoardBox"
     >
-      <NameBoard>{text}</NameBoard>
+      <Link
+        href="/board"
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          right: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
+        }}
+      >
+        <NameBoard>{text}</NameBoard>
+      </Link>
       <RatingCustom
         name="favorites"
         max={1}
