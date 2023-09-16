@@ -1,6 +1,6 @@
 "use client";
 
-import BoardHeader from "./BoardHeader";
+import BoardHeader from "./Header/BoardHeader";
 
 import { Box } from "@mui/material";
 import { styled, alpha } from "@mui/material";

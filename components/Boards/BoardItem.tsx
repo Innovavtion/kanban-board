@@ -78,13 +78,15 @@ const NameBoard = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const RatingCustom = styled(Rating)(() => ({
-  stroke: "white",
-  strokeWidth: "0.5px",
+const RatingCustom = styled(Rating)(({ theme }) => ({
   position: "absolute",
   bottom: 10,
   right: 14,
   zIndex: 2,
+  ".MuiRating-icon": {
+    color: alpha(theme.palette.common.white, 0.9),
+    fontSize: "18.5px",
+  },
 }));
 
 type Props = {
