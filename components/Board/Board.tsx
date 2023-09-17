@@ -1,6 +1,7 @@
 "use client";
 
 import BoardHeader from "./Header/BoardHeader";
+import BoardContent from "./Content/BoardContent";
 
 import { Box } from "@mui/material";
 import { styled, alpha } from "@mui/material";
@@ -34,6 +35,7 @@ export default function Board() {
       }}
     >
       <BoardHeader />
+      <BoardContent />
     </BoxCustom>
   );
 }

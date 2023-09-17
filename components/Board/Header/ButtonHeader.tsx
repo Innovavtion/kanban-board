@@ -22,6 +22,7 @@ const BoxButton = styled(Box)(({ theme }) => ({
     fontWeight: "400",
     marginTop: "1px",
   },
+  zIndex: 2,
 }));
 
 type Props = {
