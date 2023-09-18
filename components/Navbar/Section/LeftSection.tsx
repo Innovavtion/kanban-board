@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import Logo from "../Elements/Logo";
 import MenuItem from "../Elements/MenuItem";
 import SubmenuItem from "../Submenu/SubmenuItem";
@@ -48,15 +50,19 @@ export default function NavbarLeftSection({
   return (
     <Box sx={{ display: "flex" }}>
       {navbarSize <= 1100 ? (
-        <ButtonOpen
-          aria-label="create border"
-          onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
-        >
-          <DehazeIcon />
-        </ButtonOpen>
+        <Link href="/" style={{ color: "white" }}>
+          <ButtonOpen
+            aria-label="create border"
+            onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
+          >
+            <DehazeIcon />
+          </ButtonOpen>
+        </Link>
       ) : (
         <>
-          <Logo />
+          <Link href="/" style={{ color: "white" }}>
+            <Logo />
+          </Link>
           <MenuItem text="Рабочие пространства" assignment="work" />
           <MenuItem text="Недавние" assignment="recent">
             <SubmenuItem />
