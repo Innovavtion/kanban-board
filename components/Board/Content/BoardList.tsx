@@ -16,7 +16,7 @@ const BoxList = styled(Box)(() => ({
 }));
 
 const List = styled(Box)(({ theme }) => ({
-  width: "100%",
+  width: "275px",
   minHeight: "25px",
 
   backgroundColor: theme.palette.background.paper,
@@ -33,15 +33,16 @@ const BoxListContent = styled(Box)(() => ({
 
 const ListHeaderText = styled(Typography)(() => ({
   width: "100%",
-
   fontSize: "14px",
-  fontWeight: "600",
 
+  fontWeight: "600",
   overflow: "hidden",
   overflowWrap: "break-word",
 
   marginTop: "1px",
   padding: "4px 8px 4px 12px",
+
+  cursor: "pointer",
 }));
 
 const ListCard = styled(Box)(() => ({

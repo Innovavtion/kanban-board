@@ -22,14 +22,19 @@ const BoxButton = styled(Box)(({ theme }) => ({
     fontWeight: "400",
     marginTop: "1px",
   },
-  zIndex: 2,
+  zIndex: 1,
 }));
 
 type Props = {
   children: React.ReactNode;
   sx?: object;
+  className?: string;
 };
 
-export default function ButtonHeader({ children, sx }: Props) {
-  return <BoxButton sx={{ ...sx }}>{children}</BoxButton>;
+export default function ButtonHeader({ children, sx, className }: Props) {
+  return (
+    <BoxButton sx={{ ...sx }} className={`${className}`}>
+      {children}
+    </BoxButton>
+  );
 }
