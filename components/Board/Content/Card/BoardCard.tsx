@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { styled, alpha } from "@mui/material";
 
-import ButtonHeader from "../Header/ButtonHeader";
+import ButtonBoard from "../../Elements/ButtonBoard";
 import EditIcon from "@mui/icons-material/Edit";
 
 const BoxCard = styled(Box)(({ theme }) => ({
@@ -55,9 +55,9 @@ export default function BoardCard() {
   return (
     <BoxCard>
       <TypographyCard>Завершить этот сайт</TypographyCard>
-      <ButtonHeader className="button-card">
+      <ButtonBoard className="button-card">
         <EditIcon fontSize="small" sx={{ fontSize: "14px" }} />
-      </ButtonHeader>
+      </ButtonBoard>
     </BoxCard>
   );
 }

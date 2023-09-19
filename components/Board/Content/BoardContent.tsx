@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { styled, alpha } from "@mui/material";
-import BoardList from "./BoardList";
+import BoardList from "./List/BoardList";
 
 const BoxContent = styled(Box)(() => ({
   height: "100%",
