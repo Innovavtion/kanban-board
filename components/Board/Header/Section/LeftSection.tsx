@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Box, Typography, Rating } from "@mui/material";
 import { styled, alpha } from "@mui/material";
 
-import BoardTitleHeader from "../TitleHeader";
+import NameBoard from "../Elements/NameBoard";
 import ButtonBoard from "../../Elements/ButtonBoard";
 
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
@@ -41,7 +41,7 @@ export default function LeftSection() {
   const [value, setValue] = useState<number | null>(null);
   return (
     <LeftHeaderBoard>
-      <BoardTitleHeader />
+      <NameBoard />
       <RatingCustom
         name="favorites"
         max={1}

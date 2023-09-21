@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 import { Box, Typography, InputBase } from "@mui/material";
 import { styled, alpha } from "@mui/material";
+import { useNameBoard } from "./useNameBoard";
 
 const BoxTitleBoard = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -45,38 +46,24 @@ const InputTitle = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function BoardTitleHeader() {
-  const titleWidth = useRef<HTMLElement>(null);
-  const inputRef = useRef<HTMLElement>(null);
-
-  const [width, setWidth] = useState<number>(0);
-  const [editText, setEditText] = useState<boolean>(false);
-  const [text, setText] = useState<string>("Название доски");
-
-  const editOpen = () => {
-    getWidth();
-    setEditText(true);
-  };
-
-  const getWidth = () => {
-    if (titleWidth.current) setWidth(titleWidth.current.clientWidth);
-  };
-
-  const setInputWidth = (widthCurrent: number, textCurrent: string) => {
-    if (text.length < textCurrent.length) {
-      setWidth(widthCurrent + 16);
-    } else {
-      console.log("Удалил символ");
-      setWidth(widthCurrent);
-    }
-  };
+export default function NameBoard() {
+  const {
+    text,
+    width,
+    editText,
+    titleRef,
+    inputRef,
+    setText,
+    editOpen,
+    setInputWidth,
+  } = useNameBoard();
 
   return (
     <BoxTitleBoard
       onClick={() => {
-        editOpen();
+        editOpen(true);
       }}
-      ref={titleWidth}
+      ref={titleRef}
     >
       {editText ? (
         <>
@@ -84,7 +71,7 @@ export default function BoardTitleHeader() {
             autoFocus
             value={text}
             onBlur={() => {
-              setEditText(false);
+              editOpen(false);
             }}
             onChange={(e) => {
               setText(e.currentTarget.value);
