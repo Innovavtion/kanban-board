@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
+import { ButtonBase } from "@mui/material";
 import { styled, alpha } from "@mui/material";
 
-const BoxButton = styled(Box)(({ theme }) => ({
+const Button = styled(ButtonBase)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -25,16 +25,22 @@ const BoxButton = styled(Box)(({ theme }) => ({
   zIndex: 1,
 }));
 
-type Props = {
+// Наследуем весь базовый функционал реакт кнопок
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   sx?: object;
   className?: string;
-};
+}
 
-export default function ButtonHeader({ children, sx, className }: Props) {
+export default function ButtonBoard({
+  children,
+  sx,
+  className,
+  ...restProps
+}: Props) {
   return (
-    <BoxButton sx={{ ...sx }} className={`${className}`}>
+    <Button sx={{ ...sx }} className={`${className}`} {...restProps}>
       {children}
-    </BoxButton>
+    </Button>
   );
 }

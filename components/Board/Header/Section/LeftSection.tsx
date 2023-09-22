@@ -5,6 +5,7 @@ import { styled, alpha } from "@mui/material";
 
 import NameBoard from "../Elements/NameBoard";
 import ButtonBoard from "../../Elements/ButtonBoard";
+import ButtonMenu from "../../Elements/ButtonMenu";
 
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -57,6 +58,7 @@ export default function LeftSection() {
         <Typography>Для рабочего пространства</Typography>
         <ExpandMoreIcon sx={{ marginLeft: "3px" }} />
       </ButtonBoard>
+      <ButtonMenu textButton="Для рабочего пространства"></ButtonMenu>
     </LeftHeaderBoard>
   );
 }
