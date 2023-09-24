@@ -50,19 +50,15 @@ export default function NavbarLeftSection({
   return (
     <Box sx={{ display: "flex" }}>
       {navbarSize <= 1100 ? (
-        <Link href="/" style={{ color: "white" }}>
-          <ButtonOpen
-            aria-label="create border"
-            onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
-          >
-            <DehazeIcon />
-          </ButtonOpen>
-        </Link>
+        <ButtonOpen
+          aria-label="create border"
+          onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
+        >
+          <DehazeIcon />
+        </ButtonOpen>
       ) : (
         <>
-          <Link href="/" style={{ color: "white" }}>
-            <Logo />
-          </Link>
+          <Logo />
           <MenuItem text="Рабочие пространства" assignment="work" />
           <MenuItem text="Недавние" assignment="recent">
             <SubmenuItem />

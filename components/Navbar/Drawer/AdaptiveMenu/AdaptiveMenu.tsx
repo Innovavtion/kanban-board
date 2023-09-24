@@ -95,7 +95,7 @@ export default function NavbarDrawerAdaptiveMenu({
       open={openAdaptiveMenu}
     >
       <DrawerHeader>
-        <Logo />
+        <Logo onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)} />
         <IconButton
           onClick={() => drawerOpenAdaptiveMenu(openAdaptiveMenu)}
           color="inherit"
