@@ -8,6 +8,8 @@ import ButtonBoard from "./ButtonBoard";
 import CloseIcon from "@mui/icons-material/Close";
 
 const MenuCustom = styled(Menu)(({ theme }) => ({
+  minWidth: "100px",
+  maxWidth: "375px",
   "& .MuiPaper-root": {},
   ul: {
     paddingTop: "2.5px",
@@ -17,10 +19,13 @@ const MenuCustom = styled(Menu)(({ theme }) => ({
 
 const MenuTop = styled(Box)(() => ({
   position: "relative",
+  display: "flex",
   width: "100%",
   minHeight: "27px",
-  aliginItem: "center",
-  justifyItems: "center",
+  alignItems: "center",
+  justifyContent: "center",
+
+  padding: "0px 5px 8px",
 
   ".closeMenu": {
     position: "absolute",
@@ -37,17 +42,19 @@ const TypographyTop = styled(Typography)(() => ({
   lineHeight: "40px",
 
   fontWeight: "600",
-  width: "80%",
+  width: "75%",
   fontSize: "14px",
   textOverflow: "ellipsis",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
 }));
 
 const ListCustom = styled(List)(() => ({
   width: "100%",
-  minWidth: 305,
-  maxWidth: 305,
+  minWidth: 200,
+  maxWidth: "375px",
   cursor: "pointer",
-  py: 0.1,
+  padding: "5px 10px",
   "@media (max-width: 320px)": {
     minWidth: 250,
     maxWidth: 250,
@@ -82,9 +89,6 @@ export default function ButtonMenu({ children, textButton }: Props) {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
         sx={{ top: 6 }}
         PaperProps={{
           sx: {
@@ -108,7 +112,9 @@ export default function ButtonMenu({ children, textButton }: Props) {
         anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
       >
         <MenuTop>
-          <TypographyTop>Изменение видимости</TypographyTop>
+          <TypographyTop>
+            Изменение видимости fdgdfgdf gdfgdfgd dfgdfgdg asdasdasdasdasd
+          </TypographyTop>
           <ButtonBoard className="closeMenu" onClick={handleClose}>
             <CloseIcon fontSize="small" />
           </ButtonBoard>

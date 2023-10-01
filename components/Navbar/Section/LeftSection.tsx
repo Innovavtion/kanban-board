@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import Logo from "../Elements/Logo";
 import MenuItem from "../Elements/MenuItem";
 import SubmenuItem from "../Submenu/SubmenuItem";
