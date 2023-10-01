@@ -31,7 +31,7 @@ const MenuTop = styled(Box)(() => ({
     position: "absolute",
 
     top: 4,
-    right: 5,
+    right: 3.5,
   },
 }));
 
@@ -51,7 +51,7 @@ const TypographyTop = styled(Typography)(() => ({
 
 const ListCustom = styled(List)(() => ({
   width: "100%",
-  minWidth: 200,
+  minWidth: 275,
   maxWidth: "375px",
   cursor: "pointer",
   padding: "5px 10px",
@@ -63,10 +63,21 @@ const ListCustom = styled(List)(() => ({
 
 type Props = {
   children?: string | JSX.Element | JSX.Element[];
+  iconLeft?: JSX.Element;
+  iconRight?: JSX.Element;
+  sx?: object;
   textButton: string;
+  titleMenu: string;
 };
 
-export default function ButtonMenu({ children, textButton }: Props) {
+export default function ButtonMenu({
+  children,
+  iconLeft,
+  iconRight,
+  textButton,
+  titleMenu,
+  sx,
+}: Props) {
   // Open Menu
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -81,8 +92,10 @@ export default function ButtonMenu({ children, textButton }: Props) {
 
   return (
     <>
-      <ButtonBoard onClick={handleClick}>
+      <ButtonBoard onClick={handleClick} sx={{ ...sx }}>
+        {iconLeft}
         <Typography>{textButton}</Typography>
+        {iconRight}
       </ButtonBoard>
       <MenuCustom
         id="basic-menu"
@@ -112,14 +125,12 @@ export default function ButtonMenu({ children, textButton }: Props) {
         anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
       >
         <MenuTop>
-          <TypographyTop>
-            Изменение видимости fdgdfgdf gdfgdfgd dfgdfgdg asdasdasdasdasd
-          </TypographyTop>
+          <TypographyTop>{titleMenu}</TypographyTop>
           <ButtonBoard className="closeMenu" onClick={handleClose}>
             <CloseIcon fontSize="small" />
           </ButtonBoard>
         </MenuTop>
-        <ListCustom>ываываыва</ListCustom>
+        <ListCustom>{children}</ListCustom>
       </MenuCustom>
     </>
   );

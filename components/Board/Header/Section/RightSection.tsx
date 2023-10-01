@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { styled, alpha } from "@mui/material";
 
 import ButtonBoard from "../../Elements/ButtonBoard";
+import ButtonMenu from "../../Elements/ButtonMenu";
 
 import FilterListIcon from "@mui/icons-material/FilterList";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -19,10 +20,14 @@ const RightHeaderBoard = styled(Box)(() => ({
 export default function RightSection() {
   return (
     <RightHeaderBoard>
-      <ButtonBoard sx={{ px: "10px" }}>
-        <FilterListIcon fontSize="small" sx={{ marginRight: "8px" }} />
-        <Typography>Фильтр</Typography>
-      </ButtonBoard>
+      <ButtonMenu
+        textButton="Фильтр"
+        titleMenu="Фильтр"
+        iconLeft={
+          <FilterListIcon fontSize="small" sx={{ marginRight: "8px" }} />
+        }
+        sx={{ px: "10px" }}
+      ></ButtonMenu>
       <ButtonBoard sx={{ px: "10px" }}>
         <PersonAddAltIcon fontSize="small" sx={{ marginRight: "8px" }} />
         <Typography>Поделиться</Typography>

@@ -53,12 +53,15 @@ export default function LeftSection() {
         }}
         sx={{ marginRight: "3px" }}
       />
-      <ButtonBoard>
-        <PeopleOutlineIcon fontSize="small" sx={{ marginRight: "8px" }} />
-        <Typography>Для рабочего пространства</Typography>
-        <ExpandMoreIcon sx={{ marginLeft: "3px" }} />
-      </ButtonBoard>
-      <ButtonMenu textButton="Для рабочего пространства"></ButtonMenu>
+      <ButtonMenu
+        textButton="Для рабочего пространства"
+        iconLeft={
+          <PeopleOutlineIcon fontSize="small" sx={{ marginRight: "8px" }} />
+        }
+        iconRight={<ExpandMoreIcon sx={{ marginLeft: "3px" }} />}
+        titleMenu="Изменение видимости"
+        sx={{ px: "10px" }}
+      ></ButtonMenu>
     </LeftHeaderBoard>
   );
 }
