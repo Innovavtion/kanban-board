@@ -9,7 +9,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const MenuCustom = styled(Menu)(({ theme }) => ({
   minWidth: "100px",
-  maxWidth: "375px",
+  maxWidth: "500px",
   "& .MuiPaper-root": {},
   ul: {
     paddingTop: "2.5px",
@@ -25,7 +25,7 @@ const MenuTop = styled(Box)(() => ({
   alignItems: "center",
   justifyContent: "center",
 
-  padding: "0px 5px 8px",
+  padding: "0px 5px",
 
   ".closeMenu": {
     position: "absolute",
@@ -49,12 +49,12 @@ const TypographyTop = styled(Typography)(() => ({
   overflow: "hidden",
 }));
 
-const ListCustom = styled(List)(() => ({
+const ContentMenu = styled(Box)(() => ({
   width: "100%",
-  minWidth: 275,
+  minWidth: "275px",
   maxWidth: "375px",
   cursor: "pointer",
-  padding: "5px 10px",
+  padding: "5.7px 10px",
   "@media (max-width: 320px)": {
     minWidth: 250,
     maxWidth: 250,
@@ -130,7 +130,7 @@ export default function ButtonMenu({
             <CloseIcon fontSize="small" />
           </ButtonBoard>
         </MenuTop>
-        <ListCustom>{children}</ListCustom>
+        <ContentMenu>{children}</ContentMenu>
       </MenuCustom>
     </>
   );
