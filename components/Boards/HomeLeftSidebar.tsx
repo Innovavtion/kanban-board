@@ -11,6 +11,7 @@ import IconViewKanban from "@mui/icons-material/ViewKanban";
 import CopyAllIcon from "@mui/icons-material/CopyAll";
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import AddIcon from "@mui/icons-material/Add";
+import FlipToFrontIcon from "@mui/icons-material/FlipToFront";
 
 const BoxCustom = styled(Box)(({ theme }) => ({
   width: "275px",
@@ -65,7 +66,10 @@ export default function HomeLeftSidebar() {
   return (
     <BoxCustom>
       <BoardOption text="Доски" iconSvg={<IconViewKanban />} />
-      <BoardOption text="Шаблоны" iconSvg={<CopyAllIcon />} />
+      <BoardOption
+        text="Шаблоны"
+        iconSvg={<FlipToFrontIcon sx={{ transform: "rotate(90deg)" }} />}
+      />
       <BoardOption text="Главная страница" iconSvg={<ElectricBoltIcon />} />
       <Divider />
       <Box sx={{ padding: "12px 0" }}>

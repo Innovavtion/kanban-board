@@ -50,11 +50,12 @@ const TypographyCustom = styled(Typography)(() => ({
 type Props = {
   text: string;
   iconSvg: JSX.Element;
+  sx?: object;
 };
 
-export default function BoardOption({ text, iconSvg }: Props) {
+export default function BoardOption({ text, iconSvg, sx }: Props) {
   return (
-    <BoxBoardOption className="ButtonOption">
+    <BoxBoardOption className="ButtonOption" sx={{ ...sx }}>
       <IconCustom>{iconSvg}</IconCustom>
       <TypographyCustom>{text}</TypographyCustom>
     </BoxBoardOption>
