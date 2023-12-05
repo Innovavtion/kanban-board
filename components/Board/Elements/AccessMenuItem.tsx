@@ -1,8 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { styled, alpha } from "@mui/material";
 
-import LockOpenIcon from "@mui/icons-material/LockOpen";
-
 const MenuItemBox = styled(Box)(({ theme }) => ({
   width: "340px",
   borderRadius: "3px",
